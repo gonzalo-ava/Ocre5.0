@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Pigmentos Naturales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ocre: #8B4513;
+            --siena: #A0522D;
+            --beige: #F5F5DC;
+            --blanco: #FFFFFF;
+            --whatsapp: #25D366;
+            --gris: #555555;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--beige);
+            color: var(--gris);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+        
+        h1 {
+            color: var(--ocre);
+            font-size: clamp(28px, 3vw, 36px);
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: var(--gris);
+            font-size: clamp(16px, 2vw, 18px);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-card {
+            background: var(--blanco);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--siena);
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            color: var(--ocre);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .card-info {
+            margin-bottom: 20px;
+        }
+        
+        .card-info p {
+            margin: 8px 0;
+            font-size: 1rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--siena);
+            color: var(--blanco);
+        }
+        
+        .btn-primary:hover {
+            background: var(--ocre);
+            transform: translateY(-3px);
+        }
+        
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: var(--blanco);
+        }
+        
+        .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+        
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 400px;
+            margin-bottom: 30px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--gris);
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--ocre);
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--siena);
+            transform: translateY(-3px);
+        }
+        
+        /* Ajustes para móviles */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-card {
+                padding: 20px;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+        }
+        
+        /* Ajustes para pantallas grandes */
+        @media (min-width: 1200px) {
+            .container {
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Contacto Directo</h1>
+            <p class="subtitle">Comunícate con nosotros por estos medios</p>
+        </header>
+        
+        <div class="contact-grid">
+            <!-- Tarjeta de Ubicación -->
+            <div class="contact-card">
+                <div class="card-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="card-title">Visítanos</h3>
+                <div class="card-info">
+                    <p><strong>Dirección:</strong></p>
+                    <p>Av. Cochabamba #1234, Zona Norte ,El Alto</p>
+                    <p>La Paz , Bolivia</p>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-directions"></i> Ver en mapa
+                </a>
+            </div>
+            
+            <!-- Tarjeta de Teléfono -->
+            <div class="contact-card">
+                <div class="card-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3 class="card-title">Llámarnos</h3>
+                <div class="card-info">
+                    <p><strong>Celular - Fijo</strong></p>
+                    <p>+591 67150266</p>
+                    <p><strong>Celular:</strong></p>
+                    <p>+591 71915777</p>
+                </div>
+                <a href="tel:+59171915777" class="btn btn-primary">
+                    <i class="fas fa-phone"></i> Llamar ahora
+                </a>
+            </div>
+            
+            <!-- Tarjeta de WhatsApp -->
+            <div class="contact-card">
+                <div class="card-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3 class="card-title">WhatsApp</h3>
+                <div class="card-info">
+                    <p>Escríbenos directamente para consultas rápidas sobre productos y pedidos.</p>
+                </div>
+                <a href="https://wa.me/59171915777" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Chatear ahora
+                </a>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.424041161602!2d-63.1818379246861!3d-17.78324599103605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ2JzU5LjciUyA2M8KwMTAnNDkuNyJX!5e0!3m2!1ses!2sbo!4v1620000000000!5m2!1ses!2sbo" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        
+        <footer>
+            <p>Horario de atención: Lunes a Viernes 8:00am - 23:50pm | Sábados 9:00am - 24:00pm</p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p style="margin-top: 20px;">© 2023 Pigmentos Naturales Bolivia. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
