@@ -813,18 +813,122 @@
       margin: 20px 0;
     }
     
-    /* Responsive */
-    @media (max-width: 992px) {
-      .hero h1 {
-        font-size: 2.2rem;
+    /* Estilos para el hero con carrusel */
+    .hero {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+  
+    .hero-slider {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+  
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+  
+    .slide.active {
+      opacity: 1;
+    }
+  
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 20px;
+      background-color: rgba(43, 41, 39, 0.911);
+      border-radius: 10px;
+    }
+  
+    /* Nuevos estilos para el asistente de IA - SOLO BOTÓN */
+    .ai-assistant {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 110px;
+      right: 40px;
+      background: linear-gradient(135deg, #8B4513, #A0522D);
+      color: white;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 24px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 2px solid white;
+    }
+    
+    .ai-assistant:hover {
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    
+    .ai-assistant.pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(139, 69, 19, 0.7);
       }
-      
-      .hero p {
-        font-size: 1rem;
+      70% {
+        box-shadow: 0 0 0 10px rgba(139, 69, 19, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(139, 69, 19, 0);
       }
     }
     
+    /* Responsive para el asistente */
     @media (max-width: 768px) {
+      .ai-assistant {
+        bottom: 100px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+      
+      .hero {
+        height: 50vh;
+      }
+  
+      .hero-content {
+        padding: 15px;
+        max-width: 95%;
+        font-size: 0.9rem;
+      }
+  
+      .cta-button {
+        font-size: 0.8rem;
+        padding: 8px 20px;
+      }
+  
+      .slide {
+        background-size: cover;
+      }
+      
       .nav-links {
         display: none;
       }
@@ -897,83 +1001,6 @@
       
       .product-section {
         padding: 15px;
-      }
-    }
-    
-    /* Estilos para el hero con carrusel */
-    .hero {
-      position: relative;
-      height: 80vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
-    }
-  
-    .hero-slider {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-  
-    .slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-  
-    .slide.active {
-      opacity: 1;
-    }
-  
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 20px;
-      background-color: rgba(43, 41, 39, 0.911);
-      border-radius: 10px;
-    }
-  
-    .cta-button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 25px;
-      background-color: #eaa51b;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-  
-    /* Media query para pantallas más pequeñas (móviles) */
-    @media (max-width: 768px) {
-      .hero {
-        height: 50vh;
-      }
-  
-      .hero-content {
-        padding: 15px;
-        max-width: 95%;
-        font-size: 0.9rem;
-      }
-  
-      .cta-button {
-        font-size: 0.8rem;
-        padding: 8px 20px;
-      }
-  
-      .slide {
-        background-size: cover;
       }
     }
   </style>
@@ -1227,6 +1254,11 @@
     <i class="fab fa-whatsapp"></i>
   </a>
   
+  <!-- Botón flotante del Asistente de IA - SOLO AUDIO -->
+  <div class="ai-assistant pulse" id="aiAssistant" title="Haz clic para escuchar la bienvenida">
+    <i class="fas fa-robot"></i>
+  </div>
+  
   <script>
     // Función para cambiar imágenes
     function changeImage(imageSrc, element) {
@@ -1345,37 +1377,49 @@
       }
     });
     
-    // Asistente de voz con mensaje de bienvenida automático
+    // Funciones para el Asistente de IA (SOLO AUDIO)
     document.addEventListener('DOMContentLoaded', function() {
-      // Función para hablar el mensaje
-      function speakWelcomeMessage() {
-        // Verificar si el navegador soporta la síntesis de voz
-        if ('speechSynthesis' in window) {
-          // Detener cualquier mensaje anterior
+      // Elemento del asistente
+      const aiAssistant = document.getElementById('aiAssistant');
+      
+      // Mensaje de bienvenida
+      const welcomeMessage = "Bienvenido a nuestro sitio web de Ocre Bayer! Somos distribuidores oficiales de pigmentos naturales de alta calidad en Bolivia. Ofrecemos ocre, tierras naturales y óxidos para construcción, arte y restauración.
+Deslice hacia abajo para descubrir nuestros productos destacados, novedades y promociones.";
+      
+      // Función para hablar mensaje
+      function speakMessage(message) {
+        // Detener cualquier mensaje anterior
+        if (window.speechSynthesis) {
           window.speechSynthesis.cancel();
           
-          // Crear el mensaje de bienvenida
-          const message = new SpeechSynthesisUtterance();
-          message.lang = 'es-ES';
-          message.text = "Bienvenido a nuestra página web de Ocre Bayer. Pida sus ocres a precios muy económicos. Deslize mas abajo tenemos productos relacionados que le interesarán y le gustaran. gracias por visitar el sitio ,esperamos sus pedidos .";
-          message.volume = 1;
-          message.rate = 1;
-          message.pitch = 1;
+          // Crear el mensaje de voz
+          const utterance = new SpeechSynthesisUtterance(message);
+          utterance.lang = 'es-ES';
+          utterance.rate = 0.9;
+          utterance.pitch = 1;
+          utterance.volume = 1;
           
-          // Hablar el mensaje
-          window.speechSynthesis.speak(message);
-        } else {
-          // Si el navegador no soporta la síntesis de voz
-          console.log('Bienvenido a nuestra página web de Ocre Bayer. Pida sus ocres a precios muy económicos. Deslize mas abajo tenemos productos relacionados que le interesarán y le gustaran gracias por visitar el sitio.');
+          // Reproducir el mensaje
+          window.speechSynthesis.speak(utterance);
         }
       }
       
-      // Reproducir automáticamente después de 0.5 segundos (500 milisegundos) de cargar la página
-      setTimeout(speakWelcomeMessage, 500);
+      // Reproducir mensaje de bienvenida automáticamente al cargar la página
+      setTimeout(() => {
+        if (window.speechSynthesis) {
+          speakMessage(welcomeMessage);
+        }
+      }, 2000); // 2 segundos después de cargar la página
+      
+      // Reproducir mensaje al hacer clic en el botón
+      aiAssistant.addEventListener('click', function() {
+        speakMessage(welcomeMessage);
+      });
     });
   </script>
 </body>
 </html>
+
 
 
 
