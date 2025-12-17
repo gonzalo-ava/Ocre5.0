@@ -16,153 +16,23 @@
       "@type": "Organization",
       "url": "https://ocre5-0.vercel.app",
       "logo": "https://ocre5-0.vercel.app/img/6.jpeg",
-      "name": "Ocre Bayer Importado LA PAZ - BOLIVIA"
+      "name": "Ocre Bayer Importado LA PAZ - BOLIIVIA"
     }
-  </script>
+    </script>
+    
+  
+  
   
   <style>
-    /* SPLASH SCREEN - LOGO DE FONDO NÍTIDO */
-    .splash-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #F5F5DC;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      overflow: hidden;
-    }
-    
-    .splash-bg-logo {
-      position: absolute;
-      width: 70%;
-      height: 70%;
-      opacity: 1;
-      background-image: url('img/7.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      filter: none;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      image-rendering: pixelated;
-      -ms-interpolation-mode: nearest-neighbor;
-    }
-    
-    .splash-content {
-      text-align: center;
-      z-index: 2;
-      position: relative;
-      margin-top: -350px;
-    }
-    
-    .splash-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      color: #8B4513;
-      font-weight: 700;
-      text-align: center;
-      line-height: 1.3;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
-    }
-    
-    .word {
-      display: inline-block;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: wordAppear 0.8s forwards;
-      margin-right: 12px;
-    }
-    
-    .word:nth-child(1) { animation-delay: 0.5s; }
-    .word:nth-child(2) { animation-delay: 1.0s; }
-    .word:nth-child(3) { animation-delay: 1.5s; }
-    .word:nth-child(4) { animation-delay: 2.0s; }
-    
-    .splash-subtitle {
-      font-size: 1.2rem;
-      color: #666666;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-top: 10px;
-      opacity: 0;
-      animation: fadeIn 1s 2.5s forwards;
-      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
-    }
-    
-    .splash-logo {
-      width: 80px;
-      height: auto;
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeIn 1s 3s forwards;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    }
-    
-    @keyframes wordAppear {
-      0% {
-        opacity: 0;
-        transform: translateY(30px) rotateX(90deg);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) rotateX(0);
-      }
-    }
-    
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-    
-    .splash-screen.fade-out {
-      opacity: 0;
-      transform: scale(1.1);
-      transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-    }
-    
-    body {
-      overflow: hidden;
-      height: 100%;
-      position: fixed;
-      width: 100%;
-    }
-    
-    body.loaded {
-      overflow: auto;
-      height: auto;
-      position: static;
-    }
-    
-    .main-content {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    
-    body.loaded .main-content {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    html, body {
-      scroll-behavior: auto;
-    }
-    
     :root {
-      --primary: #8B4513;
-      --secondary: #A0522D;
-      --accent: #CD853F;
-      --light: #F5F5DC;
-      --dark: #333333;
-      --highlight: #D2B48C;
-      --whatsapp: #25D366;
-      --text-light: #666666;
+      --primary: #8B4513;     /* Color tierra oscuro */
+      --secondary: #A0522D;   /* Siena */
+      --accent: #CD853F;      /* Peru */
+      --light: #F5F5DC;       /* Beige claro */
+      --dark: #333333;        /* Texto oscuro */
+      --highlight: #D2B48C;   /* Tan */
+      --whatsapp: #25D366;    /* Verde WhatsApp */
+      --text-light: #666666;  /* Texto gris */
       --border-radius: 8px;
       --box-shadow: 0 5px 15px rgba(0,0,0,0.08);
       --transition: all 0.3s ease;
@@ -190,7 +60,7 @@
       color: var(--primary);
     }
     
-    /* Barra de navegación */
+    /* Barra de navegación profesional */
     .navbar {
       background-color: white;
       box-shadow: 0 2px 20px rgba(0,0,0,0.08);
@@ -224,8 +94,6 @@
     .logo img {
       height: 48px;
       margin-right: 12px;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
     }
     
     .logo-text {
@@ -276,51 +144,16 @@
       color: var(--primary);
     }
     
-    /* Hero section */
+    /* Hero section profesional */
     .hero {
-      position: relative;
-      height: 80vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
-    }
-    
-    .hero-slider {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-    
-    .slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/hero-bg.jpg');
       background-size: cover;
       background-position: center;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-    
-    .slide.active {
-      opacity: 1;
-    }
-    
-    .hero-content {
+      background-attachment: fixed;
+      color: white;
+      padding: 120px 20px;
+      text-align: center;
       position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 30px;
-      background-color: rgba(43, 41, 39, 0.85);
-      border-radius: 10px;
-      margin: 0 20px;
     }
     
     .hero h1 {
@@ -367,11 +200,11 @@
     
     /* Sección con fondo de imagen */
     .product-section {
-      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('img/12.jpeg');
+      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../Ocre/img/12.jpeg');
       background-size: cover;
-      background-attachment: scroll;
+      background-attachment: fixed;
       background-position: center;
-      padding: 30px;
+      padding: 40px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       margin-bottom: 40px;
@@ -381,8 +214,8 @@
     .product-header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
-      padding: 30px 20px;
-      margin-bottom: 30px;
+      padding: 40px;
+      margin-bottom: 40px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       text-align: center;
@@ -403,7 +236,7 @@
     }
     
     .product-title {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin-bottom: 10px;
       position: relative;
       z-index: 1;
@@ -416,20 +249,20 @@
       z-index: 1;
     }
     
-    /* Galería de imágenes */
+    /* Galería de imágenes profesional */
     .gallery-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
     
     .main-image-container {
       width: 100%;
       max-width: 650px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       background: white;
-      padding: 15px;
+      padding: 20px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       display: flex;
@@ -450,13 +283,11 @@
       border-radius: var(--border-radius);
       border: 1px solid rgba(0,0,0,0.05);
       transition: transform 0.5s ease;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
     }
     
     .thumbnail-container {
       display: flex;
-      gap: 12px;
+      gap: 15px;
       justify-content: center;
       flex-wrap: wrap;
       width: 100%;
@@ -464,10 +295,10 @@
     }
     
     .thumbnail {
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       background: white;
-      padding: 4px;
+      padding: 5px;
       border-radius: var(--border-radius);
       box-shadow: 0 3px 10px rgba(0,0,0,0.08);
       cursor: pointer;
@@ -489,8 +320,6 @@
       height: 100%;
       object-fit: cover;
       border-radius: calc(var(--border-radius) - 2px);
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
     }
     
     .thumbnail.selected {
@@ -512,10 +341,10 @@
     
     .product-description {
       background: white;
-      padding: 25px;
+      padding: 30px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       position: relative;
     }
     
@@ -532,7 +361,7 @@
     
     .product-description h2 {
       font-size: 1.8rem;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       color: var(--primary);
       border-bottom: 2px solid var(--highlight);
       padding-bottom: 10px;
@@ -540,24 +369,22 @@
     }
     
     .product-description p {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       color: var(--text-light);
       line-height: 1.7;
-      font-size: 1rem;
     }
     
     .features-list {
       list-style-type: none;
-      margin: 20px 0;
+      margin: 25px 0;
     }
     
     .features-list li {
-      padding: 8px 0;
+      padding: 10px 0;
       position: relative;
-      padding-left: 25px;
+      padding-left: 30px;
       color: var(--text-light);
       border-bottom: 1px dashed rgba(0,0,0,0.05);
-      font-size: 0.95rem;
     }
     
     .features-list li:before {
@@ -566,7 +393,7 @@
       font-weight: bold;
       position: absolute;
       left: 0;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
     
     /* Barra lateral con precio y CTA */
@@ -576,10 +403,10 @@
     
     .price-box {
       background: white;
-      padding: 25px;
+      padding: 30px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       text-align: center;
       border: 2px solid var(--highlight);
       position: relative;
@@ -600,10 +427,10 @@
     }
     
     .price {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: var(--primary);
       font-weight: bold;
-      margin: 15px 0;
+      margin: 20px 0;
       position: relative;
       display: inline-block;
     }
@@ -628,13 +455,13 @@
       background: var(--whatsapp);
       color: white;
       border: none;
-      padding: 14px 25px;
+      padding: 15px 30px;
       border-radius: 50px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       width: 100%;
-      margin: 15px 0;
+      margin: 20px 0;
       transition: var(--transition);
       display: flex;
       align-items: center;
@@ -654,7 +481,7 @@
     .stock {
       color: var(--primary);
       font-weight: 500;
-      margin: 12px 0;
+      margin: 15px 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -663,7 +490,7 @@
     
     .product-meta {
       background: white;
-      padding: 20px;
+      padding: 25px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
     }
@@ -671,9 +498,8 @@
     .meta-item {
       display: flex;
       justify-content: space-between;
-      padding: 10px 0;
+      padding: 12px 0;
       border-bottom: 1px solid rgba(0,0,0,0.05);
-      font-size: 0.95rem;
     }
     
     .meta-item:last-child {
@@ -687,13 +513,13 @@
     
     /* Productos relacionados */
     .related-products {
-      margin: 50px 0;
+      margin: 60px 0;
     }
     
     .related-products h2 {
       text-align: center;
-      margin-bottom: 35px;
-      font-size: 1.8rem;
+      margin-bottom: 40px;
+      font-size: 2rem;
       position: relative;
       display: inline-block;
       left: 50%;
@@ -712,8 +538,8 @@
     
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
     }
     
     .product-card {
@@ -726,12 +552,12 @@
     }
     
     .product-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-10px);
       box-shadow: 0 15px 30px rgba(0,0,0,0.12);
     }
     
     .product-card-img {
-      height: 200px;
+      height: 220px;
       overflow: hidden;
     }
     
@@ -740,8 +566,6 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
     }
     
     .product-card:hover .product-card-img img {
@@ -749,11 +573,11 @@
     }
     
     .product-card-info {
-      padding: 18px;
+      padding: 20px;
     }
     
     .product-card-info h3 {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       margin-bottom: 10px;
       color: var(--dark);
     }
@@ -769,7 +593,7 @@
       display: inline-block;
       background: var(--accent);
       color: white;
-      padding: 8px 18px;
+      padding: 8px 20px;
       border-radius: var(--border-radius);
       text-decoration: none;
       font-weight: 500;
@@ -785,8 +609,8 @@
     .footer {
       background: #000000;
       color: white;
-      padding: 50px 0 25px;
-      margin-top: 50px;
+      padding: 70px 0 30px;
+      margin-top: 60px;
     }
     
     .footer-container {
@@ -795,42 +619,39 @@
       padding: 0 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 35px;
+      gap: 40px;
     }
     
     .footer-about {
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
     
     .footer-logo {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     
     .footer-logo img {
-      height: 45px;
-      filter: brightness(0) invert(1);
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
+      height: 50px;
+      filter: brightness(0) invert(1); /* Hace el logo blanco */
     }
     
     .footer-about p {
       opacity: 0.8;
       line-height: 1.7;
-      margin-bottom: 20px;
-      font-size: 0.95rem;
+      margin-bottom: 25px;
     }
     
     .social-links {
       display: flex;
-      gap: 12px;
+      gap: 15px;
     }
     
     .social-links a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       background: rgba(255,255,255,0.1);
       border-radius: 50%;
       color: white;
@@ -843,8 +664,8 @@
     }
     
     .footer-contact h3 {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+      font-size: 1.3rem;
+      margin-bottom: 25px;
       position: relative;
       padding-bottom: 10px;
     }
@@ -862,25 +683,18 @@
     .footer-contact p {
       display: flex;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 15px;
       opacity: 0.8;
       gap: 10px;
-      font-size: 0.95rem;
     }
     
     .footer-bottom {
       text-align: center;
-      padding-top: 25px;
-      margin-top: 25px;
+      padding-top: 30px;
+      margin-top: 30px;
       border-top: 1px solid rgba(255,255,255,0.1);
       opacity: 0.7;
-      font-size: 0.85rem;
-      padding: 0 20px;
-    }
-    
-    .footer-bottom a {
-      color: var(--accent);
-      text-decoration: none;
+      font-size: 0.9rem;
     }
     
     /* Botón flotante de WhatsApp */
@@ -888,8 +702,8 @@
       position: fixed;
       width: 60px;
       height: 60px;
-      bottom: 30px;
-      right: 30px;
+      bottom: 40px;
+      right: 40px;
       background-color: var(--whatsapp);
       color: white;
       border-radius: 50px;
@@ -931,7 +745,7 @@
     .modal-content {
       background-color: white;
       margin: 5% auto;
-      padding: 25px;
+      padding: 30px;
       border-radius: var(--border-radius);
       box-shadow: 0 5px 30px rgba(0,0,0,0.3);
       width: 80%;
@@ -961,7 +775,7 @@
     
     .modal-body {
       display: flex;
-      gap: 25px;
+      gap: 30px;
       margin-top: 20px;
     }
     
@@ -973,8 +787,6 @@
       width: 100%;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
     }
     
     .modal-text {
@@ -984,35 +796,22 @@
     .modal-text h3 {
       color: var(--primary);
       margin-bottom: 15px;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
     }
     
     .modal-text p {
       color: var(--text-light);
       margin-bottom: 15px;
-      font-size: 0.95rem;
     }
     
     .modal-price {
       font-size: 1.3rem;
       color: var(--primary);
       font-weight: 700;
-      margin: 18px 0;
+      margin: 20px 0;
     }
     
-    /* Botón de menú móvil */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--dark);
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 5px;
-      z-index: 1001;
-    }
-    
-    /* ==================== MEDIA QUERIES PARA TABLET ==================== */
+    /* Responsive */
     @media (max-width: 992px) {
       .hero h1 {
         font-size: 2.2rem;
@@ -1021,624 +820,352 @@
       .hero p {
         font-size: 1rem;
       }
-      
-      .product-title {
-        font-size: 2rem;
-      }
-      
-      .product-info {
-        gap: 30px;
-      }
-      
-      .main-image-container {
-        height: 380px;
-      }
-      
-      .splash-text {
-        font-size: 2.5rem;
-      }
-      
-      .splash-bg-logo {
-        width: 80%;
-        height: 60%;
-      }
-      
-      .splash-content {
-        margin-top: -80px;
-      }
     }
     
-    /* ==================== MEDIA QUERIES PARA CELULAR ==================== */
     @media (max-width: 768px) {
-      /* Barra de navegación móvil */
-      .nav-container {
-        padding: 0 15px;
-      }
-      
       .nav-links {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        display: none !important;
-        gap: 0;
-        z-index: 999;
-      }
-      
-      .nav-links.active {
-        display: flex !important;
-      }
-      
-      .nav-links li {
-        width: 100%;
-        text-align: center;
-      }
-      
-      .nav-links a {
-        display: block;
-        padding: 15px;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-        width: 100%;
+        display: none;
       }
       
       .mobile-menu-btn {
-        display: block !important;
+        display: block;
+        background: none;
+        border: none;
+        color: var(--dark);
+        font-size: 1.5rem;
+        cursor: pointer;
       }
       
-      .logo img {
-        height: 40px;
-      }
-      
-      /* Hero section móvil */
-      .hero {
-        height: 60vh;
-        min-height: 400px;
-      }
-      
-      .hero-content {
-        padding: 25px 20px;
-        margin: 0 15px;
-        background-color: rgba(43, 41, 39, 0.9);
-      }
-      
-      .hero h1 {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-      }
-      
-      .hero p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-      }
-      
-      .cta-button {
-        padding: 10px 25px;
-        font-size: 0.95rem;
-      }
-      
-      /* Contenedor principal móvil */
-      .container {
-        margin: 25px auto;
-        padding: 0 15px;
-      }
-      
-      .product-section {
-        padding: 20px 15px;
-        margin-bottom: 30px;
-      }
-      
-      .product-header {
-        padding: 25px 15px;
-        margin-bottom: 25px;
-      }
-      
-      .product-title {
-        font-size: 1.7rem;
-      }
-      
-      /* Galería móvil */
-      .gallery-container {
-        margin-bottom: 30px;
-      }
-      
-      .main-image-container {
-        height: 300px;
-        padding: 12px;
-        margin-bottom: 15px;
-      }
-      
-      .thumbnail-container {
-        gap: 10px;
-      }
-      
-      .thumbnail {
-        width: 60px;
-        height: 60px;
-      }
-      
-      /* Información del producto móvil */
       .product-info {
         flex-direction: column;
-        margin-bottom: 40px;
-        gap: 30px;
       }
       
       .product-details, .product-sidebar {
         flex: 0 0 100%;
-        width: 100%;
       }
       
-      .product-description {
-        padding: 20px;
-        margin-bottom: 20px;
+      .main-image-container {
+        height: 350px;
       }
       
-      .product-description h2 {
-        font-size: 1.5rem;
-      }
-      
-      .product-description p {
-        font-size: 0.95rem;
-      }
-      
-      .features-list li {
-        font-size: 0.9rem;
-        padding-left: 22px;
-      }
-      
-      /* Sidebar móvil */
-      .price-box {
-        padding: 20px;
-      }
-      
-      .price {
-        font-size: 1.8rem;
-      }
-      
-      .whatsapp-btn {
-        padding: 12px 20px;
-        font-size: 0.95rem;
-      }
-      
-      /* Productos relacionados móvil */
-      .related-products {
-        margin: 40px 0;
-      }
-      
-      .related-products h2 {
-        font-size: 1.6rem;
-        margin-bottom: 25px;
-      }
-      
-      .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 20px;
-      }
-      
-      .product-card-img {
-        height: 150px;
-      }
-      
-      .product-card-info {
-        padding: 15px;
-      }
-      
-      .product-card-info h3 {
-        font-size: 1.1rem;
-      }
-      
-      /* Footer móvil */
-      .footer {
-        padding: 40px 0 20px;
-        margin-top: 40px;
+      .thumbnail {
+        width: 70px;
+        height: 70px;
       }
       
       .footer-container {
         grid-template-columns: 1fr;
-        gap: 30px;
       }
       
-      .footer-contact p {
-        font-size: 0.9rem;
+      .modal-body {
+        flex-direction: column;
       }
       
-      /* Modal móvil */
       .modal-content {
         width: 90%;
         margin: 10% auto;
         padding: 20px;
       }
       
-      .modal-body {
-        flex-direction: column;
-        gap: 20px;
+      .product-section {
+        padding: 20px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero {
+        padding: 80px 20px;
       }
       
-      /* WhatsApp float móvil */
-      .whatsapp-float {
-        width: 55px;
-        height: 55px;
-        bottom: 25px;
-        right: 25px;
-        font-size: 26px;
+      .hero h1 {
+        font-size: 1.8rem;
       }
       
-      /* Splash screen móvil */
-      .splash-text {
+      .product-title {
+        font-size: 1.8rem;
+      }
+      
+      .main-image-container {
+        height: 280px;
+      }
+      
+      .price {
         font-size: 2rem;
       }
       
-      .splash-bg-logo {
-        width: 90%;
-        height: 50%;
-      }
-      
-      .splash-content {
-        margin-top: -60px;
-      }
-      
-      .splash-subtitle {
-        font-size: 1rem;
-        letter-spacing: 2px;
-      }
-      
-      .splash-logo {
-        width: 60px;
-        margin-bottom: 15px;
-      }
-      
-      .word {
-        margin-right: 8px;
-      }
-    }
-    
-    /* ==================== MEDIA QUERIES PARA CELULAR PEQUEÑO ==================== */
-    @media (max-width: 480px) {
-      .hero {
-        height: 55vh;
-        min-height: 350px;
-      }
-      
-      .hero-content {
-        padding: 20px 15px;
-      }
-      
-      .hero h1 {
-        font-size: 1.6rem;
-      }
-      
-      .hero p {
-        font-size: 0.9rem;
-      }
-      
-      .product-title {
-        font-size: 1.5rem;
-      }
-      
-      .main-image-container {
-        height: 250px;
-      }
-      
-      .thumbnail {
-        width: 55px;
-        height: 55px;
-      }
-      
-      .products-grid {
-        grid-template-columns: 1fr;
-        max-width: 300px;
-        margin: 0 auto;
-      }
-      
-      .product-card-img {
-        height: 180px;
-      }
-      
-      .price {
-        font-size: 1.7rem;
-      }
-      
-      .splash-text {
-        font-size: 1.6rem;
-      }
-      
-      .splash-bg-logo {
-        width: 95%;
-        height: 40%;
-      }
-      
-      .splash-content {
-        margin-top: -40px;
-      }
-      
-      .word {
-        margin-right: 5px;
-        display: block;
-        margin-bottom: 5px;
-      }
-      
-      .splash-subtitle {
-        font-size: 0.9rem;
-        letter-spacing: 1px;
-      }
-      
-      .splash-logo {
-        width: 50px;
-        margin-bottom: 10px;
-      }
-      
-      .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 24px;
-      }
-      
-      .footer-bottom {
-        font-size: 0.8rem;
-        line-height: 1.5;
-      }
-    }
-    
-    /* ==================== MEDIA QUERIES PARA CELULAR MUY PEQUEÑO ==================== */
-    @media (max-width: 360px) {
-      .hero h1 {
-        font-size: 1.4rem;
-      }
-      
-      .product-title {
-        font-size: 1.3rem;
-      }
-      
-      .main-image-container {
-        height: 220px;
-      }
-      
-      .thumbnail-container {
-        justify-content: space-between;
-      }
-      
-      .thumbnail {
-        width: 50px;
-        height: 50px;
-      }
-      
-      .price {
-        font-size: 1.5rem;
-      }
-      
-      .splash-text {
-        font-size: 1.4rem;
-      }
-      
-      .logo-text {
-        font-size: 1rem;
-      }
-      
-      .logo img {
-        height: 35px;
+      .product-section {
+        padding: 15px;
       }
     }
   </style>
 </head>
 <body>
-  
-  <!-- SPLASH SCREEN - LOGO DE FONDO NÍTIDO -->
-  <div class="splash-screen" id="splashScreen">
-    <div class="splash-bg-logo"></div>
-    
-    <div class="splash-content">
-      <!-- Texto más arriba -->
-      <div class="splash-text">
-        <span class="word">OCRE</span>
-        <span class="word">BAYER</span>
-        <span class="word">IMPORTADO</span>
-        <span class="word">BOLIVIA</span>
-      </div>
+  <!-- Barra de navegación profesional -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="img/7.png" alt="Pigmentos Naturales Bolivia">
+        <span class="logo-text">Pigmentos <span>Naturales</span></span>
+      </a>
       
-      <div class="splash-subtitle">
-        Pigmentos Minerales Premium
-      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+       
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
       
-      <!-- Logo pequeño adicional (opcional) -->
-      <img src="img/7.png" alt="Logo" class="splash-logo">
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
-  </div>
+  </nav>
   
-  <!-- CONTENIDO PRINCIPAL (inicialmente oculto) -->
-  <div class="main-content">
-    <!-- Barra de navegación profesional -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <a href="index.html" class="logo">
-          <img src="img/7.png" alt="Pigmentos Naturales Bolivia">
-          <span class="logo-text">Pigmentos <span>Naturales</span></span>
-        </a>
-        
-        <ul class="nav-links">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-        
-        <button class="mobile-menu-btn">
-          <i class="fas fa-bars"></i>
-        </button>
+  <section class="hero">
+    <!-- Carrusel con tus imágenes locales -->
+    <div class="hero-slider">
+      <div class="slide active" style="background-image: url('../Ocre/img/13.png')"></div>
+    </div>
+  
+    <div class="hero-content">
+      <h1>Pigmentos Minerales de la Más Alta Calidad</h1>
+      <p>Materiales premium para construcción, arte y restauración patrimonial</p>
+      <a href="#productos" class="cta-button">Explorar Catálogo</a>
+    </div>
+  </section>
+  
+  <style>
+    .hero {
+      position: relative;
+      height: 80vh; /* Ajusta esta altura según necesites */
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+  
+    .hero-slider {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+  
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover; /* Para que se ajuste mejor en móviles */
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+  
+    .slide.active {
+      opacity: 1;
+    }
+  
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 20px;
+      background-color: rgba(43, 41, 39, 0.911);
+      border-radius: 10px;
+    }
+  
+    .cta-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 25px;
+      background-color: #eaa51b;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  
+    /* Media query para pantallas más pequeñas (móviles) */
+    @media (max-width: 768px) {
+      .hero {
+        height: 50vh; /* Más pequeño en móviles */
+      }
+  
+      .hero-content {
+        padding: 15px;
+        max-width: 95%; /* Mejor uso del espacio en móviles */
+        font-size: 0.9rem;
+      }
+  
+      .cta-button {
+        font-size: 0.8rem; /* Reduce el tamaño del botón */
+        padding: 8px 20px;
+      }
+  
+      .slide {
+        background-size: cover; /* Ajuste óptimo para pantallas pequeñas */
+      }
+    }
+  </style>
+  
+  
+  <!-- Contenido principal con fondo de imagen -->
+  <div class="container">
+    <div class="product-section" id="productos">
+      <div class="product-header">
+        <h1 class="product-title">Ocre Natural Premium</h1>
+        <p>Pigmento mineral 100% natural para aplicaciones profesionales</p>
       </div>
-    </nav>
-    
-    <section class="hero">
-      <!-- Carrusel con tus imágenes locales -->
-      <div class="hero-slider">
-        <div class="slide active" style="background-image: url('img/13.png')"></div>
-      </div>
-    
-      <div class="hero-content">
-        <h1>Pigmentos Minerales de la Más Alta Calidad</h1>
-        <p>Materiales premium para construcción, arte y restauración patrimonial</p>
-        <a href="#productos" class="cta-button">Explorar Catálogo</a>
-      </div>
-    </section>
-    
-    <!-- Contenido principal con fondo de imagen -->
-    <div class="container">
-      <div class="product-section" id="productos">
-        <div class="product-header">
-          <h1 class="product-title">Ocre Natural Premium</h1>
-          <p>Pigmento mineral 100% natural para aplicaciones profesionales</p>
+      
+      <!-- Galería de imágenes -->
+      <div class="gallery-container">
+        <div class="main-image-container">
+          <img src="img/1.jpg" alt="Ocre Natural de alta calidad" id="mainImage" class="main-image">
         </div>
         
-        <!-- Galería de imágenes -->
-        <div class="gallery-container">
-          <div class="main-image-container">
-            <img src="img/1.jpg" alt="Ocre Natural de alta calidad" id="mainImage" class="main-image">
+        <div class="thumbnail-container">
+          <div class="thumbnail selected" onclick="changeImage('img/1.jpg', this)">
+            <img src="img/1.jpg" alt="Ocre Natural - Vista 1">
           </div>
-          
-          <div class="thumbnail-container">
-            <div class="thumbnail selected" onclick="changeImage('img/1.jpg', this)">
-              <img src="img/1.jpg" alt="Ocre Natural - Vista 1">
-            </div>
-            <div class="thumbnail" onclick="changeImage('img/2.jpg', this)">
-              <img src="img/2.jpg" alt="Ocre Natural - Vista 2">
-            </div>
-            <div class="thumbnail" onclick="changeImage('img/3.jpg', this)">
-              <img src="img/3.jpg" alt="Ocre Natural - Vista 3">
-            </div>
-            <div class="thumbnail" onclick="changeImage('img/4.jpg', this)">
-              <img src="img/4.jpg" alt="Ocre Natural - Vista 4">
-            </div>
+          <div class="thumbnail" onclick="changeImage('img/2.jpg', this)">
+            <img src="img/2.jpg" alt="Ocre Natural - Vista 2">
           </div>
-        </div>
-        
-        <!-- Información del producto -->
-        <div class="product-info">
-          <div class="product-details">
-            <div class="product-description">
-              <h2>Descripción del Producto</h2>
-              <p>Nuestro Ocre Natural es un pigmento mineral de primera calidad, extraído mediante procesos sostenibles y cuidadosamente procesado para mantener sus propiedades naturales intactas. Ideal para profesionales que buscan materiales de máxima calidad.</p>
-              
-              <p><strong>Aplicaciones principales:</strong></p>
-              <ul class="features-list">
-                <li>Pinturas artísticas y decorativas de alta gama</li>
-                <li>Revestimientos arquitectónicos y morteros pigmentados</li>
-                <li>Restauración de bienes culturales y patrimoniales</li>
-                <li>Elaboración de concretos decorativos y estampados</li>
-                <li>Construcción tradicional y ecológica</li>
-                <li>Venta al por mayor y menor según requerimientos</li>
-                <li>Servicio de entrega a domicilio en todo el país</li>
-              </ul>
-              <p>Presentación en sacos de 25 kg. Color estable a la luz UV y condiciones climáticas extremas. No contiene aditivos químicos ni sintéticos.</p>
-            </div>
-            
-            <!-- Especificaciones técnicas -->
-            <div class="product-description">
-              <h2>Especificaciones Técnicas</h2>
-              <ul class="features-list">
-                <li><strong>Origen:</strong> Minas naturales de Bolivia (Potosí)</li>
-                <li><strong>Composición:</strong> Óxidos de hierro naturales (Fe2O3)</li>
-                <li><strong>Granulometría:</strong> 200-300 mesh (74-53 micrones)</li>
-                <li><strong>Resistencia a la luz:</strong> 8 (Escala Blue Wool 1-8)</li>
-                <li><strong>pH:</strong> 6.5 - 7.5 (neutro)</li>
-                <li><strong>Absorción de aceite:</strong> 25-35% (ASTM D281)</li>
-                <li><strong>Humedad máxima:</strong> 2%</li>
-                <li><strong>Solubilidad:</strong> Insoluble en agua y solventes orgánicos</li>
-              </ul>
-            </div>
+          <div class="thumbnail" onclick="changeImage('img/3.jpg', this)">
+            <img src="img/3.jpg" alt="Ocre Natural - Vista 3">
           </div>
-          
-          <div class="product-sidebar">
-            <div class="price-box">
-              <div class="price">Bs/ 25.90</div>
-              <p class="small-text">(Precio por kilogramo)</p>
-              <p class="small-text"><i class="fas fa-box-open"></i> Precio por saco (25kg): Bs/ 647.50</p>
-              <a href="https://wa.me/59171915777?text=Estoy%20interesado%20en%20el%20Ocre%20Natural%20Premium%20-%20Código%20OC-NAT-25" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-              <p class="stock"><i class="fas fa-check-circle"></i> Disponible en stock</p>
-              <p class="small-text"><i class="fas fa-truck"></i> Envío a todo Bolivia</p>
-              <p class="small-text"><i class="fas fa-credit-card"></i> Aceptamos transferencias y efectivo</p>
-            </div>
-            
-            <div class="product-meta">
-              <div class="meta-item">
-                <span class="meta-label">Categoría:</span>
-                <span>Pigmentos Minerales Naturales</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Presentación:</span>
-                <span>Saco 25kg</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Código:</span>
-                <span>OC-NAT-25</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Color:</span>
-                <span>Ocre amarillo-naranja</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Disponibilidad:</span>
-                <span>Inmediata</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Tiempo de entrega:</span>
-                <span>24-48 horas (Santa Cruz)</span>
-              </div>
-            </div>
+          <div class="thumbnail" onclick="changeImage('img/4.jpg', this)">
+            <img src="img/4.jpg" alt="Ocre Natural - Vista 4">
           </div>
         </div>
       </div>
       
-      <!-- Productos relacionados -->
-      <div class="related-products">
-        <h2>Productos Relacionados</h2>
-        <div class="products-grid">
-          <div class="product-card">
-            <div class="product-card-img">
-              <img src="img/8.png" alt="Tierra Roja Natural">
-            </div>
-            <div class="product-card-info">
-              <h3>Ocre rojo Natural</h3>
-              <div class="product-card-price">Bs/ 22.90/kg</div>
-              <a href="#" class="product-card-btn" onclick="showModal('Tierra Roja Natural', 'img/8.png', 'Bs/ 22.90 por kilogramo', 'Pigmento mineral natural de color rojo intenso, ideal para morteros pigmentados y pinturas artesanales. Extraído de yacimientos naturales con alto contenido de óxidos de hierro.')">Ver Detalles</a>
-            </div>
+      <!-- Información del producto -->
+      <div class="product-info">
+        <div class="product-details">
+          <div class="product-description">
+            <h2>Descripción del Producto</h2>
+            <p>Nuestro Ocre Natural es un pigmento mineral de primera calidad, extraído mediante procesos sostenibles y cuidadosamente procesado para mantener sus propiedades naturales intactas. Ideal para profesionales que buscan materiales de máxima calidad.</p>
+            
+            <p><strong>Aplicaciones principales:</strong></p>
+            <ul class="features-list">
+              <li>Pinturas artísticas y decorativas de alta gama</li>
+              <li>Revestimientos arquitectónicos y morteros pigmentados</li>
+              <li>Restauración de bienes culturales y patrimoniales</li>
+              <li>Elaboración de concretos decorativos y estampados</li>
+              <li>Construcción tradicional y ecológica</li>
+              <li>Venta al por mayor y menor según requerimientos</li>
+              <li>Servicio de entrega a domicilio en todo el país</li>
+            </ul>
+            <p>Presentación en sacos de 25 kg. Color estable a la luz UV y condiciones climáticas extremas. No contiene aditivos químicos ni sintéticos.</p>
           </div>
           
-          <div class="product-card">
-            <div class="product-card-img">
-              <img src="img/9.png" alt="Óxido Negro Mineral">
-            </div>
-            <div class="product-card-info">
-              <h3>Tizanol</h3>
-              <div class="product-card-price">Bs/ 28.50/kg</div>
-              <a href="#" class="product-card-btn" onclick="showModal('Tizanol', 'img/9.png', 'Bs/ 28.50 por kilogramo', 'Pigmento de tizanol , perfecto para acabados arquitectónicos y concretos decorativos. Gran resistencia a la intemperie y luz solar.')">Ver Detalles</a>
-            </div>
+          <!-- Especificaciones técnicas -->
+          <div class="product-description">
+            <h2>Especificaciones Técnicas</h2>
+            <ul class="features-list">
+              <li><strong>Origen:</strong> Minas naturales de Bolivia (Potosí)</li>
+              <li><strong>Composición:</strong> Óxidos de hierro naturales (Fe2O3)</li>
+              <li><strong>Granulometría:</strong> 200-300 mesh (74-53 micrones)</li>
+              <li><strong>Resistencia a la luz:</strong> 8 (Escala Blue Wool 1-8)</li>
+              <li><strong>pH:</strong> 6.5 - 7.5 (neutro)</li>
+              <li><strong>Absorción de aceite:</strong> 25-35% (ASTM D281)</li>
+              <li><strong>Humedad máxima:</strong> 2%</li>
+              <li><strong>Solubilidad:</strong> Insoluble en agua y solventes orgánicos</li>
+            </ul>
           </div>
-          <div class="product-card">
-            <div class="product-card-img">
-              <img src="img/123.png" alt="Óxido Negro Mineral">
-            </div>
-            <div class="product-card-info">
-              <h3>Paquetes de Ocre Bayer</h3>
-              <div class="product-card-price">Bs/ 28.50/kg</div>
-              <a href="#" class="product-card-btn" onclick="showModal('Paquetes de Ocre Bayer', 'img/123.png', 'Bs/ 28.50 por kilogramo', 'Pigmento de tizanol , perfecto para acabados arquitectónicos y concretos decorativos. Gran resistencia a la intemperie y luz solar.')">Ver Detalles</a>
-            </div>
+        </div>
+        
+        <div class="product-sidebar">
+          <div class="price-box">
+            <div class="price">Bs/ 25.90</div>
+            <p class="small-text">(Precio por kilogramo)</p>
+            <p class="small-text"><i class="fas fa-box-open"></i> Precio por saco (25kg): Bs/ 647.50</p>
+            <a href="https://wa.me/59171915777?text=Estoy%20interesado%20en%20el%20Ocre%20Natural%20Premium%20-%20Código%20OC-NAT-25" class="whatsapp-btn">
+              <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+            </a>
+            <p class="stock"><i class="fas fa-check-circle"></i> Disponible en stock</p>
+            <p class="small-text"><i class="fas fa-truck"></i> Envío a todo Bolivia</p>
+            <p class="small-text"><i class="fas fa-credit-card"></i> Aceptamos transferencias y efectivo</p>
           </div>
           
-          <div class="product-card">
-            <div class="product-card-img">
-              <img src="img/10.png" alt="Paquetes de Bayer,Tizanol">
+          <div class="product-meta">
+            <div class="meta-item">
+              <span class="meta-label">Categoría:</span>
+              <span>Pigmentos Minerales Naturales</span>
             </div>
-            <div class="product-card-info">
-              <h3>Paquetes de Bayer,Tizanol</h3>
-              <div class="product-card-price">Bs/ 20.80/kg</div>
-              <a href="#" class="product-card-btn" onclick="showModal('Paquetes de Bayer ', 'img/10.png', 'Bs/ 20.80 por kilogramo', 'Productos en general de los que usted no se arrepentira , utilizado tradicionalmente en construcción y arte. Presentación en sacos de 25kg.')">Ver Detalles</a>
+            <div class="meta-item">
+              <span class="meta-label">Presentación:</span>
+              <span>Saco 25kg</span>
             </div>
+            <div class="meta-item">
+              <span class="meta-label">Código:</span>
+              <span>OC-NAT-25</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Color:</span>
+              <span>Ocre amarillo-naranja</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Disponibilidad:</span>
+              <span>Inmediata</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Tiempo de entrega:</span>
+              <span>24-48 horas (Santa Cruz)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Productos relacionados -->
+    <div class="related-products">
+      <h2>Productos Relacionados</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="../Ocre/img/8.png" alt="Tierra Roja Natural">
+          </div>
+          <div class="product-card-info">
+            <h3>Ocre rojo Natural</h3>
+            <div class="product-card-price">Bs/ 22.90/kg</div>
+            <a href="#" class="product-card-btn" onclick="showModal('Tierra Roja Natural', '../Ocre/img/8.png', 'Bs/ 22.90 por kilogramo', 'Pigmento mineral natural de color rojo intenso, ideal para morteros pigmentados y pinturas artesanales. Extraído de yacimientos naturales con alto contenido de óxidos de hierro.')">Ver Detalles</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="../Ocre/img/9.png" alt="Óxido Negro Mineral">
+          </div>
+          <div class="product-card-info">
+            <h3>Tizanol</h3>
+            <div class="product-card-price">Bs/ 28.50/kg</div>
+             <a href="#" class="product-card-btn" onclick="showModal('Tizanol', '../Ocre/img/9.png', 'Bs/ 28.50 por kilogramo', 'Pigmento de tizanol , perfecto para acabados arquitectónicos y concretos decorativos. Gran resistencia a la intemperie y luz solar.')">Ver Detalles</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="../Ocre/img/123.png" alt="Óxido Negro Mineral">
+          </div>
+          <div class="product-card-info">
+            <h3>Paquetes de Ocre Bayer
+            </h3>
+            <div class="product-card-price">Bs/ 28.50/kg</div>
+             <a href="#" class="product-card-btn" onclick="showModal('Tizanol', '../Ocre/img/123.png', 'Bs/ 28.50 por kilogramo', 'Pigmento de tizanol , perfecto para acabados arquitectónicos y concretos decorativos. Gran resistencia a la intemperie y luz solar.')">Ver Detalles</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="img/10.png" alt="Paquetes de Bayer,Tizanol">
+          </div>
+          <div class="product-card-info">
+            <h3>Paquetes de Bayer,Tizanol</h3>
+            <div class="product-card-price">Bs/ 20.80/kg</div>
+            <a href="#" class="product-card-btn" onclick="showModal('Paquetes de Bayer ', '../Ocre/img/10.png', 'Bs/ 20.80 por kilogramo', 'Productos en general de los que usted no se arrepentira , utilizado tradicionalmente en construcción y arte. Presentación en sacos de 25kg.')">Ver Detalles</a>
           </div>
         </div>
       </div>
@@ -1691,7 +1218,7 @@
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; 2023 Pigmentos Naturales Bolivia. Todos los derechos reservados. | Diseñado por <a href="#">Gonzalo Churqui Q Cel:71261231 info </a></p>
+      <p>&copy; 2023 Pigmentos Naturales Bolivia. Todos los derechos reservados. | Diseñado por <a href="#" style="color: var(--accent);">Gonzalo Churqui Q Cel:71261231 info </a></p>
     </div>
   </footer>
   
@@ -1701,90 +1228,9 @@
   </a>
   
   <script>
-    // SPLASH SCREEN - Control principal
-    document.addEventListener('DOMContentLoaded', function() {
-      const splashScreen = document.getElementById('splashScreen');
-      const body = document.body;
-      
-      // Forzar que la página esté en la parte superior
-      window.scrollTo(0, 0);
-      
-      // Asegurar que no haya scroll durante el splash
-      body.style.overflow = 'hidden';
-      body.style.position = 'fixed';
-      body.style.width = '100%';
-      body.style.height = '100%';
-      
-      // Función para esconder el splash
-      function hideSplash() {
-        // Añadir clase de animación de salida
-        splashScreen.classList.add('fade-out');
-        
-        // Esperar a que termine la animación
-        setTimeout(() => {
-          // Ocultar completamente el splash
-          splashScreen.style.display = 'none';
-          
-          // Restaurar el scroll y posición del body
-          body.style.overflow = 'auto';
-          body.style.position = 'static';
-          body.style.width = 'auto';
-          body.style.height = 'auto';
-          
-          // Añadir clase loaded al body
-          body.classList.add('loaded');
-          
-          // Forzar que la página empiece desde arriba
-          window.scrollTo(0, 0);
-          
-          // Mostrar contenido principal con animación
-          const mainContent = document.querySelector('.main-content');
-          mainContent.style.display = 'block';
-          
-          // Pequeño delay para asegurar que el DOM esté listo
-          setTimeout(() => {
-            mainContent.style.opacity = '1';
-            mainContent.style.transform = 'translateY(0)';
-            
-            // Asegurar que el hero se vea correctamente
-            window.scrollTo(0, 0);
-          }, 50);
-        }, 800);
-      }
-      
-      // Configurar animación de palabras
-      function setupWordsAnimation() {
-        const words = document.querySelectorAll('.word');
-        words.forEach((word, index) => {
-          word.style.animationDelay = `${0.5 + (index * 0.5)}s`;
-        });
-      }
-      
-      // Inicializar
-      setupWordsAnimation();
-      
-      // Precargar el logo para máxima nitidez
-      const logoImg = new Image();
-      logoImg.src = 'img/7.png';
-      logoImg.onload = function() {
-        console.log('Logo cargado en alta calidad');
-      };
-      
-      // Tiempo total: 3 segundos
-      setTimeout(hideSplash, 3000);
-      
-      // Permitir salir con click
-      splashScreen.addEventListener('click', hideSplash);
-      
-      // Inicializar menú móvil
-      initMobileMenu();
-      
-      // Inicializar carrusel hero
-      initHeroSlider();
-    });
-    
     // Función para cambiar imágenes
     function changeImage(imageSrc, element) {
+      // Cambiar la imagen principal
       const mainImage = document.getElementById('mainImage');
       mainImage.style.opacity = 0;
       
@@ -1793,10 +1239,12 @@
         mainImage.style.opacity = 1;
       }, 200);
       
+      // Remover la clase 'selected' de todas las miniaturas
       document.querySelectorAll('.thumbnail').forEach(thumb => {
         thumb.classList.remove('selected');
       });
       
+      // Añadir la clase 'selected' a la miniatura clickeada
       element.classList.add('selected');
     }
     
@@ -1809,48 +1257,33 @@
       this.style.transform = 'scale(1)';
     });
     
-    // Menú móvil
-    function initMobileMenu() {
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
       const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
       const navLinks = document.querySelector('.nav-links');
       
-      if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', function() {
-          navLinks.classList.toggle('active');
-          this.innerHTML = navLinks.classList.contains('active') ? 
-            '<i class="fas fa-times"></i>' : 
-            '<i class="fas fa-bars"></i>';
-        });
-        
-        // Cerrar menú al hacer click en un enlace
-        document.querySelectorAll('.nav-links a').forEach(link => {
-          link.addEventListener('click', function() {
-            navLinks.classList.remove('active');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-          });
-        });
-        
-        window.addEventListener('resize', function() {
-          if (window.innerWidth > 768) {
-            navLinks.classList.remove('active');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-          }
-        });
-      }
-    }
-    
-    // Smooth scroll para enlaces
-    document.addEventListener('DOMContentLoaded', function() {
+      mobileMenuBtn.addEventListener('click', function() {
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        this.innerHTML = navLinks.style.display === 'flex' ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      });
+      
+      // Ajustar menú en resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          navLinks.style.display = 'flex';
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        } else {
+          navLinks.style.display = 'none';
+        }
+      });
+      
+      // Smooth scroll para enlaces
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            window.scrollTo({
-              top: target.offsetTop - 80,
-              behavior: 'smooth'
-            });
-          }
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
         });
       });
     });
@@ -1889,22 +1322,23 @@
       }
     }
 
+
     // Carrusel del hero
-    function initHeroSlider() {
+    document.addEventListener('DOMContentLoaded', function() {
       const slides = document.querySelectorAll('.slide');
-      if (slides.length > 0) {
-        let currentSlide = 0;
-        
-        function nextSlide() {
-          slides[currentSlide].classList.remove('active');
-          currentSlide = (currentSlide + 1) % slides.length;
-          slides[currentSlide].classList.add('active');
-        }
-        
-        // Cambia cada 5 segundos
-        setInterval(nextSlide, 5000);
+      let currentSlide = 0;
+      
+      function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
       }
-    }
+      
+      // Cambia cada 5 segundos
+      setInterval(nextSlide, 5000);
+    });
+
+    
   </script>
 
 </body>
