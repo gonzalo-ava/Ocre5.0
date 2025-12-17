@@ -1,43 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- METADATOS DE SEGURIDAD AGREGADOS -->
- <meta http-equiv="Content-Security-Policy" 
-      content="default-src 'self'; 
-               script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.googleapis.com/ https://fonts.gstatic.com/; 
-               style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com/ https://fonts.googleapis.com/; 
-               img-src 'self' data: https:; 
-               font-src 'self' https://fonts.gstatic.com/ https://cdnjs.cloudflare.com/;
-               connect-src 'self';
-               frame-ancestors 'none';">
-  
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  
-  <!-- TUS METADATOS EXISTENTES -->
   <meta charset="UTF-8">
-  <meta name="google-site-verification" content="y8BGP1VNS8l7T7qyX6fVqRFe4rrJcA9pXe7WpKKKRww" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Distribuidores oficiales de pigmentos naturales de alta calidad en Bolivia. Ocre, tierras naturales y óxidos para construcción, arte y restauración.">
   <meta name="keywords" content="pigmentos naturales, ocre Bolivia, tierras naturales, óxidos minerales, materiales construcción, pigmentos para arte">
   <title>OCRE BAYER IMPORTADO LA PAZ - BOLIVIA</title>
-  <link rel="icon" href="img/7.png" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-   <script type="application/ld+json">
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "https://ocre5-0.vercel.app",
       "logo": "https://ocre5-0.vercel.app/img/6.jpeg",
-      "name": "Ocre Bayer Importado LA PAZ - BOLIIVIA"
+      "name": "Ocre Bayer Importado LA PAZ - BOLIVIA"
     }
-    </script>
+  </script>
   
   <style>
+    /* SPLASH SCREEN - LOGO DE FONDO NÍTIDO */
+    .splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #F5F5DC; /* Color de fondo igual que tu página */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    
+    .splash-bg-logo {
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      opacity: 1; /* Logo completamente visible y nítido */
+      background-image: url('img/7.png'); /* Tu logo */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      filter: none; /* Sin filtros para máxima nitidez */
+      image-rendering: -webkit-optimize-contrast; /* Mejor calidad en Chrome/Safari */
+      image-rendering: crisp-edges; /* Mejor calidad en Firefox */
+      image-rendering: pixelated; /* Mejor calidad para imágenes pixeladas */
+      -ms-interpolation-mode: nearest-neighbor; /* Mejor calidad en IE */
+    }
+    
+    /* Contenido centrado sobre el logo - TEXTO MÁS ARRIBA */
+    .splash-content {
+      text-align: center;
+      z-index: 2;
+      position: relative;
+      margin-top: -350px; /* Mueve todo el contenido más arriba */
+    }
+    
+    /* Texto principal con palabras que aparecen - MÁS ARRIBA */
+    .splash-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #8B4513;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 10px; /* Reducido para subir más */
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+    }
+    
+    .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: wordAppear 0.8s forwards;
+      margin-right: 12px;
+    }
+    
+    .word:nth-child(1) { animation-delay: 0.5s; }
+    .word:nth-child(2) { animation-delay: 1.0s; }
+    .word:nth-child(3) { animation-delay: 1.5s; }
+    .word:nth-child(4) { animation-delay: 2.0s; }
+    
+    /* Subtítulo - MÁS ARRIBA */
+    .splash-subtitle {
+      font-size: 1.2rem;
+      color: #666666;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 10px; /* Reducido para subir más */
+      opacity: 0;
+      animation: fadeIn 1s 2.5s forwards;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+    }
+    
+    /* Logo más pequeño para dar espacio al texto */
+    .splash-logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 1s 3s forwards;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+    
+    /* Animaciones */
+    @keyframes wordAppear {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) rotateX(90deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    
+    /* Salida elegante */
+    .splash-screen.fade-out {
+      opacity: 0;
+      transform: scale(1.1);
+      transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    
+    /* Evitar scroll y ocultar contenido principal */
+    body {
+      overflow: hidden;
+      height: 100%;
+      position: fixed;
+      width: 100%;
+    }
+    
+    body.loaded {
+      overflow: auto;
+      height: auto;
+      position: static;
+    }
+    
+    .main-content {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    body.loaded .main-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Asegurar que la página empiece desde arriba */
+    html, body {
+      scroll-behavior: auto;
+    }
+    
     :root {
       --primary: #8B4513;     /* Color tierra oscuro */
       --secondary: #A0522D;   /* Siena */
@@ -108,6 +232,8 @@
     .logo img {
       height: 48px;
       margin-right: 12px;
+      image-rendering: -webkit-optimize-contrast; /* Logo nítido en nav también */
+      image-rendering: crisp-edges;
     }
     
     .logo-text {
@@ -214,7 +340,7 @@
     
     /* Sección con fondo de imagen */
     .product-section {
-      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('img/12.jpeg');
+      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../Ocre/img/12.jpeg');
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
@@ -297,6 +423,8 @@
       border-radius: var(--border-radius);
       border: 1px solid rgba(0,0,0,0.05);
       transition: transform 0.5s ease;
+      image-rendering: -webkit-optimize-contrast; /* Imágenes nítidas */
+      image-rendering: crisp-edges;
     }
     
     .thumbnail-container {
@@ -334,6 +462,8 @@
       height: 100%;
       object-fit: cover;
       border-radius: calc(var(--border-radius) - 2px);
+      image-rendering: -webkit-optimize-contrast; /* Miniaturas nítidas */
+      image-rendering: crisp-edges;
     }
     
     .thumbnail.selected {
@@ -580,6 +710,8 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
+      image-rendering: -webkit-optimize-contrast; /* Imágenes de productos nítidas */
+      image-rendering: crisp-edges;
     }
     
     .product-card:hover .product-card-img img {
@@ -642,14 +774,13 @@
     
     .footer-logo {
       margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
     
     .footer-logo img {
       height: 50px;
-      filter: brightness(0) invert(1);
+      filter: brightness(0) invert(1); /* Hace el logo blanco */
+      image-rendering: -webkit-optimize-contrast; /* Logo nítido en footer */
+      image-rendering: crisp-edges;
     }
     
     .footer-about p {
@@ -804,6 +935,8 @@
       width: 100%;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
+      image-rendering: -webkit-optimize-contrast; /* Modal imágenes nítidas */
+      image-rendering: crisp-edges;
     }
     
     .modal-text {
@@ -828,122 +961,31 @@
       margin: 20px 0;
     }
     
-    /* Estilos para el hero con carrusel */
-    .hero {
-      position: relative;
-      height: 80vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
-    }
-  
-    .hero-slider {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-  
-    .slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-  
-    .slide.active {
-      opacity: 1;
-    }
-  
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 20px;
-      background-color: rgba(43, 41, 39, 0.911);
-      border-radius: 10px;
-    }
-  
-    /* Nuevos estilos para el asistente de IA - SOLO BOTÓN */
-    .ai-assistant {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 110px;
-      right: 40px;
-      background: linear-gradient(135deg, #8B4513, #A0522D);
-      color: white;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 24px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: 2px solid white;
-    }
-    
-    .ai-assistant:hover {
-      transform: scale(1.1) translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    }
-    
-    .ai-assistant.pulse {
-      animation: pulse 2s infinite;
-    }
-    
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(139, 69, 19, 0.7);
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.2rem;
       }
-      70% {
-        box-shadow: 0 0 0 10px rgba(139, 69, 19, 0);
+      
+      .hero p {
+        font-size: 1rem;
       }
-      100% {
-        box-shadow: 0 0 0 0 rgba(139, 69, 19, 0);
+      
+      .splash-text {
+        font-size: 2.5rem;
+      }
+      
+      .splash-bg-logo {
+        width: 80%;
+        height: 60%;
+      }
+      
+      .splash-content {
+        margin-top: -80px;
       }
     }
     
-    /* Responsive para el asistente */
     @media (max-width: 768px) {
-      .ai-assistant {
-        bottom: 100px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-      }
-      
-      .hero {
-        height: 50vh;
-      }
-  
-      .hero-content {
-        padding: 15px;
-        max-width: 95%;
-        font-size: 0.9rem;
-      }
-  
-      .cta-button {
-        font-size: 0.8rem;
-        padding: 8px 20px;
-      }
-  
-      .slide {
-        background-size: cover;
-      }
-      
       .nav-links {
         display: none;
       }
@@ -991,6 +1033,23 @@
       .product-section {
         padding: 20px;
       }
+      
+      .splash-text {
+        font-size: 2rem;
+      }
+      
+      .splash-bg-logo {
+        width: 90%;
+        height: 50%;
+      }
+      
+      .splash-content {
+        margin-top: -60px;
+      }
+      
+      .splash-logo {
+        width: 60px;
+      }
     }
     
     @media (max-width: 576px) {
@@ -1017,196 +1076,329 @@
       .product-section {
         padding: 15px;
       }
+      
+      .splash-text {
+        font-size: 1.8rem;
+      }
+      
+      .splash-bg-logo {
+        width: 95%;
+        height: 40%;
+      }
+      
+      .splash-content {
+        margin-top: -40px;
+      }
+      
+      .word {
+        margin-right: 8px;
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      .splash-subtitle {
+        font-size: 1rem;
+        letter-spacing: 2px;
+      }
+      
+      .splash-logo {
+        width: 50px;
+        margin-bottom: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Barra de navegación profesional -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="img/7.png" alt="Pigmentos Naturales Bolivia">
-        <span class="logo-text">Pigmentos <span>Naturales</span></span>
-      </a>
-      
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="Contacto.html">Contacto</a></li>
-      </ul>
-      
-      <button class="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </nav>
   
-  <section class="hero">
-    <!-- Carrusel con tus imágenes locales -->
-    <div class="hero-slider">
-      <div class="slide active" style="background-image: url('img/13.png')"></div>
-    </div>
-  
-    <div class="hero-content">
-      <h1>Pigmentos Minerales de la Más Alta Calidad</h1>
-      <p>Materiales premium para construcción, arte y restauración patrimonial</p>
-      <a href="#productos" class="cta-button">Explorar Catálogo</a>
-    </div>
-  </section>
-  
-  <!-- Contenido principal con fondo de imagen -->
-  <div class="container">
-    <div class="product-section" id="productos">
-      <div class="product-header">
-        <h1 class="product-title">Ocre Natural Premium</h1>
-        <p>Pigmento mineral 100% natural para aplicaciones profesionales</p>
-      </div>
-      
-      <!-- Galería de imágenes -->
-      <div class="gallery-container">
-        <div class="main-image-container">
-          <img src="img/1.jpg" alt="Ocre Natural de alta calidad" id="mainImage" class="main-image">
-        </div>
-        
-        <div class="thumbnail-container">
-          <div class="thumbnail selected" onclick="changeImage('img/1.jpg', this)">
-            <img src="img/1.jpg" alt="Ocre Natural - Vista 1">
-          </div>
-          <div class="thumbnail" onclick="changeImage('img/2.jpg', this)">
-            <img src="img/2.jpg" alt="Ocre Natural - Vista 2">
-          </div>
-          <div class="thumbnail" onclick="changeImage('img/3.jpg', this)">
-            <img src="img/3.jpg" alt="Ocre Natural - Vista 3">
-          </div>
-          <div class="thumbnail" onclick="changeImage('img/4.jpg', this)">
-            <img src="img/4.jpg" alt="Ocre Natural - Vista 4">
-          </div>
-        </div>
-      </div>
-      
-      <!-- Información del producto -->
-      <div class="product-info">
-        <div class="product-details">
-          <div class="product-description">
-            <h2>Descripción del Producto</h2>
-            <p>Nuestro Ocre Natural es un pigmento mineral de primera calidad, extraído mediante procesos sostenibles y cuidadosamente procesado para mantener sus propiedades naturales intactas. Ideal para profesionales que buscan materiales de máxima calidad.</p>
-            
-            <p><strong>Aplicaciones principales:</strong></p>
-            <ul class="features-list">
-              <li>Pinturas artísticas y decorativas de alta gama</li>
-              <li>Revestimientos arquitectónicos y morteros pigmentados</li>
-              <li>Restauración de bienes culturales y patrimoniales</li>
-              <li>Elaboración de concretos decorativos y estampados</li>
-              <li>Construcción tradicional y ecológica</li>
-              <li>Venta al por mayor y menor según requerimientos</li>
-              <li>Servicio de entrega a domicilio en todo el país</li>
-            </ul>
-            <p>Presentación en sacos de 25 kg. Color estable a la luz UV y condiciones climáticas extremas. No contiene aditivos químicos ni sintéticos.</p>
-          </div>
-          
-          <!-- Especificaciones técnicas -->
-          <div class="product-description">
-            <h2>Especificaciones Técnicas</h2>
-            <ul class="features-list">
-              <li><strong>Origen:</strong> Minas naturales de Bolivia (Potosí)</li>
-              <li><strong>Composición:</strong> Óxidos de hierro naturales (Fe2O3)</li>
-              <li><strong>Granulometría:</strong> 200-300 mesh (74-53 micrones)</li>
-              <li><strong>Resistencia a la luz:</strong> 8 (Escala Blue Wool 1-8)</li>
-              <li><strong>pH:</strong> 6.5 - 7.5 (neutro)</li>
-              <li><strong>Absorción de aceite:</strong> 25-35% (ASTM D281)</li>
-              <li><strong>Humedad máxima:</strong> 2%</li>
-              <li><strong>Solubilidad:</strong> Insoluble en agua y solventes orgánicos</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="product-sidebar">
-          <div class="price-box">
-            <div class="price">Bs 25.90</div>
-            <p class="small-text">(Precio por kilogramo)</p>
-            <p class="small-text"><i class="fas fa-box-open"></i> Precio por saco (25kg): Bs 647.50</p>
-            <a href="https://wa.me/59171915777?text=Estoy%20interesado%20en%20el%20Ocre%20Natural%20Premium%20-%20Código%20OC-NAT-25" class="whatsapp-btn">
-              <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-            </a>
-            <p class="stock"><i class="fas fa-check-circle"></i> Disponible en stock</p>
-            <p class="small-text"><i class="fas fa-truck"></i> Envío a todo Bolivia</p>
-            <p class="small-text"><i class="fas fa-credit-card"></i> Aceptamos transferencias y efectivo</p>
-          </div>
-          
-          <div class="product-meta">
-            <div class="meta-item">
-              <span class="meta-label">Categoría:</span>
-              <span>Pigmentos Minerales Naturales</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Presentación:</span>
-              <span>Saco 25kg</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Código:</span>
-              <span>OC-NAT-25</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Color:</span>
-              <span>Ocre amarillo-naranja</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Disponibilidad:</span>
-              <span>Inmediata</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Tiempo de entrega:</span>
-              <span>24-48 horas (Santa Cruz,Pando,Beni)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- SPLASH SCREEN - LOGO DE FONDO NÍTIDO -->
+  <div class="splash-screen" id="splashScreen">
+    <div class="splash-bg-logo"></div>
     
-    <!-- Productos relacionados -->
-    <div class="related-products">
-      <h2>Productos Relacionados</h2>
-      <div class="products-grid">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="img/8.png" alt="Tierra Roja Natural">
+    <div class="splash-content">
+      <!-- Texto más arriba -->
+      <div class="splash-text">
+        <span class="word">OCRE</span>
+        <span class="word">BAYER</span>
+        <span class="word">IMPORTADO</span>
+        <span class="word">BOLIVIA</span>
+      </div>
+      
+      <div class="splash-subtitle">
+        Pigmentos Minerales Premium
+      </div>
+      
+      <!-- Logo pequeño adicional (opcional) -->
+      <img src="img/7.png" alt="Logo" class="splash-logo">
+    </div>
+  </div>
+  
+  <!-- CONTENIDO PRINCIPAL (inicialmente oculto) -->
+  <div class="main-content">
+    <!-- Barra de navegación profesional -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="img/7.png" alt="Pigmentos Naturales Bolivia">
+          <span class="logo-text">Pigmentos <span>Naturales</span></span>
+        </a>
+        
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+    
+    <section class="hero">
+      <!-- Carrusel con tus imágenes locales -->
+      <div class="hero-slider">
+        <div class="slide active" style="background-image: url('../Ocre/img/13.png')"></div>
+      </div>
+    
+      <div class="hero-content">
+        <h1>Pigmentos Minerales de la Más Alta Calidad</h1>
+        <p>Materiales premium para construcción, arte y restauración patrimonial</p>
+        <a href="#productos" class="cta-button">Explorar Catálogo</a>
+      </div>
+    </section>
+    
+    <style>
+      .hero {
+        position: relative;
+        height: 80vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+      }
+    
+      .hero-slider {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+    
+      .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        image-rendering: -webkit-optimize-contrast; /* Hero image nítida */
+        image-rendering: crisp-edges;
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+    
+      .slide.active {
+        opacity: 1;
+      }
+    
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        padding: 20px;
+        background-color: rgba(43, 41, 39, 0.911);
+        border-radius: 10px;
+      }
+    
+      .cta-button {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 25px;
+        background-color: #eaa51b;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+    
+      @media (max-width: 768px) {
+        .hero {
+          height: 50vh;
+        }
+    
+        .hero-content {
+          padding: 15px;
+          max-width: 95%;
+          font-size: 0.9rem;
+        }
+    
+        .cta-button {
+          font-size: 0.8rem;
+          padding: 8px 20px;
+        }
+    
+        .slide {
+          background-size: cover;
+        }
+      }
+    </style>
+    
+    <!-- Contenido principal con fondo de imagen -->
+    <div class="container">
+      <div class="product-section" id="productos">
+        <div class="product-header">
+          <h1 class="product-title">Ocre Natural Premium</h1>
+          <p>Pigmento mineral 100% natural para aplicaciones profesionales</p>
+        </div>
+        
+        <!-- Galería de imágenes -->
+        <div class="gallery-container">
+          <div class="main-image-container">
+            <img src="img/1.jpg" alt="Ocre Natural de alta calidad" id="mainImage" class="main-image">
           </div>
-          <div class="product-card-info">
-            <h3>Ocre rojo Natural</h3>
-            <div class="product-card-price">Bs 22.90</div>
-            <a href="#" class="product-card-btn" onclick="showModal('Tierra Roja Natural', 'img/8.png', 'Bs 22.90 por kilogramo', 'Pigmento mineral natural de color rojo intenso, ideal para morteros pigmentados y pinturas artesanales. Extraído de yacimientos naturales con alto contenido de óxidos de hierro.')">Ver Detalles</a>
+          
+          <div class="thumbnail-container">
+            <div class="thumbnail selected" onclick="changeImage('img/1.jpg', this)">
+              <img src="img/1.jpg" alt="Ocre Natural - Vista 1">
+            </div>
+            <div class="thumbnail" onclick="changeImage('img/2.jpg', this)">
+              <img src="img/2.jpg" alt="Ocre Natural - Vista 2">
+            </div>
+            <div class="thumbnail" onclick="changeImage('img/3.jpg', this)">
+              <img src="img/3.jpg" alt="Ocre Natural - Vista 3">
+            </div>
+            <div class="thumbnail" onclick="changeImage('img/4.jpg', this)">
+              <img src="img/4.jpg" alt="Ocre Natural - Vista 4">
+            </div>
           </div>
         </div>
         
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="img/20.png" alt="Óxido Negro Mineral">
+        <!-- Información del producto -->
+        <div class="product-info">
+          <div class="product-details">
+            <div class="product-description">
+              <h2>Descripción del Producto</h2>
+              <p>Nuestro Ocre Natural es un pigmento mineral de primera calidad, extraído mediante procesos sostenibles y cuidadosamente procesado para mantener sus propiedades naturales intactas. Ideal para profesionales que buscan materiales de máxima calidad.</p>
+              
+              <p><strong>Aplicaciones principales:</strong></p>
+              <ul class="features-list">
+                <li>Pinturas artísticas y decorativas de alta gama</li>
+                <li>Revestimientos arquitectónicos y morteros pigmentados</li>
+                <li>Restauración de bienes culturales y patrimoniales</li>
+                <li>Elaboración de concretos decorativos y estampados</li>
+                <li>Construcción tradicional y ecológica</li>
+                <li>Venta al por mayor y menor según requerimientos</li>
+                <li>Servicio de entrega a domicilio en todo el país</li>
+              </ul>
+              <p>Presentación en sacos de 25 kg. Color estable a la luz UV y condiciones climáticas extremas. No contiene aditivos químicos ni sintéticos.</p>
+            </div>
+            
+            <!-- Especificaciones técnicas -->
+            <div class="product-description">
+              <h2>Especificaciones Técnicas</h2>
+              <ul class="features-list">
+                <li><strong>Origen:</strong> Minas naturales de Bolivia (Potosí)</li>
+                <li><strong>Composición:</strong> Óxidos de hierro naturales (Fe2O3)</li>
+                <li><strong>Granulometría:</strong> 200-300 mesh (74-53 micrones)</li>
+                <li><strong>Resistencia a la luz:</strong> 8 (Escala Blue Wool 1-8)</li>
+                <li><strong>pH:</strong> 6.5 - 7.5 (neutro)</li>
+                <li><strong>Absorción de aceite:</strong> 25-35% (ASTM D281)</li>
+                <li><strong>Humedad máxima:</strong> 2%</li>
+                <li><strong>Solubilidad:</strong> Insoluble en agua y solventes orgánicos</li>
+              </ul>
+            </div>
           </div>
-          <div class="product-card-info">
-            <h3>Tizanol</h3>
-            <div class="product-card-price">Bs 28.50</div>
-             <a href="#" class="product-card-btn" onclick="showModal('Tizanol', 'img/20.png', 'Bs 28.50 por kilogramo', 'Pigmento de tizanol , perfecto para acabados arquitectónicos y concretos decorativos. Gran resistencia a la intemperie y luz solar.')">Ver Detalles</a>
+          
+          <div class="product-sidebar">
+            <div class="price-box">
+              <div class="price">Bs/ 25.90</div>
+              <p class="small-text">(Precio por kilogramo)</p>
+              <p class="small-text"><i class="fas fa-box-open"></i> Precio por saco (25kg): Bs/ 647.50</p>
+              <a href="https://wa.me/59171915777?text=Estoy%20interesado%20en%20el%20Ocre%20Natural%20Premium%20-%20Código%20OC-NAT-25" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+              <p class="stock"><i class="fas fa-check-circle"></i> Disponible en stock</p>
+              <p class="small-text"><i class="fas fa-truck"></i> Envío a todo Bolivia</p>
+              <p class="small-text"><i class="fas fa-credit-card"></i> Aceptamos transferencias y efectivo</p>
+            </div>
+            
+            <div class="product-meta">
+              <div class="meta-item">
+                <span class="meta-label">Categoría:</span>
+                <span>Pigmentos Minerales Naturales</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Presentación:</span>
+                <span>Saco 25kg</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Código:</span>
+                <span>OC-NAT-25</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Color:</span>
+                <span>Ocre amarillo-naranja</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Disponibilidad:</span>
+                <span>Inmediata</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Tiempo de entrega:</span>
+                <span>24-48 horas (Santa Cruz)</span>
+              </div>
+            </div>
           </div>
         </div>
-           
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="img/123.png" alt="Óxido Negro Mineral">
+      </div>
+      
+      <!-- Productos relacionados -->
+      <div class="related-products">
+        <h2>Productos Relacionados</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="../Ocre/img/8.png" alt="Tierra Roja Natural">
+            </div>
+            <div class="product-card-info">
+              <h3>Ocre rojo Natural</h3>
+              <div class="product-card-price">Bs/ 22.90/kg</div>
+              <a href="#" class="product-card-btn" onclick="showModal('Tierra Roja Natural', '../Ocre/img/8.png', 'Bs/ 22.90 por kilogramo', 'Pigmento mineral natural de color rojo intenso, ideal para morteros pigmentados y pinturas artesanales. Extraído de yacimientos naturales con alto contenido de óxidos de hierro.')">Ver Detalles</a>
+            </div>
           </div>
-          <div class="product-card-info">
-            <h3>Paquetes de Bayer </h3>
-            <div class="product-card-price">Bs 25.50</div>
-             <a href="#" class="product-card-btn" onclick="showModal('Paquetes Ocre Bayer', 'img/123.png', 'Bs 25.50 por kilogramo', 'Pigmento de Ocre Bayer , perfecto para acabados arquitectónicos y concretos decorativos. Gran resistencia a la intemperie y luz solar.')">Ver Detalles</a>
+          
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="../Ocre/img/9.png" alt="Óxido Negro Mineral">
+            </div>
+            <div class="product-card-info">
+              <h3>Tizanol</h3>
+              <div class="product-card-price">Bs/ 28.50/kg</div>
+              <a href="#" class="product-card-btn" onclick="showModal('Tizanol', '../Ocre/img/9.png', 'Bs/ 28.50 por kilogramo', 'Pigmento de tizanol , perfecto para acabados arquitectónicos y concretos decorativos. Gran resistencia a la intemperie y luz solar.')">Ver Detalles</a>
+            </div>
           </div>
-        </div>
-        
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="img/10.png" alt="Paquetes de Bayer,Tizanol">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="../Ocre/img/123.png" alt="Óxido Negro Mineral">
+            </div>
+            <div class="product-card-info">
+              <h3>Paquetes de Ocre Bayer</h3>
+              <div class="product-card-price">Bs/ 28.50/kg</div>
+              <a href="#" class="product-card-btn" onclick="showModal('Tizanol', '../Ocre/img/123.png', 'Bs/ 28.50 por kilogramo', 'Pigmento de tizanol , perfecto para acabados arquitectónicos y concretos decorativos. Gran resistencia a la intemperie y luz solar.')">Ver Detalles</a>
+            </div>
           </div>
-          <div class="product-card-info">
-            <h3>Paquetes de Bayer,Tizanol</h3>
-            <div class="product-card-price">Bs 20.80</div>
-            <a href="#" class="product-card-btn" onclick="showModal('Paquetes de Bayer ', 'img/10.png', 'Bs 20.80 por kilogramo', 'Productos en general de los que usted no se arrepentira , utilizado tradicionalmente en construcción y arte. Presentación en sacos de 25kg.')">Ver Detalles</a>
+          
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="img/10.png" alt="Paquetes de Bayer,Tizanol">
+            </div>
+            <div class="product-card-info">
+              <h3>Paquetes de Bayer,Tizanol</h3>
+              <div class="product-card-price">Bs/ 20.80/kg</div>
+              <a href="#" class="product-card-btn" onclick="showModal('Paquetes de Bayer ', '../Ocre/img/10.png', 'Bs/ 20.80 por kilogramo', 'Productos en general de los que usted no se arrepentira , utilizado tradicionalmente en construcción y arte. Presentación en sacos de 25kg.')">Ver Detalles</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1239,7 +1431,6 @@
       <div class="footer-about">
         <div class="footer-logo">
           <img src="img/7.png" alt="Pigmentos Naturales Bolivia">
-          <span>Pigmentos Naturales Bolivia</span>
         </div>
         <p>Líderes en distribución de pigmentos minerales naturales de alta calidad para construcción, arte y restauración en Bolivia desde 2010.</p>
         <div class="social-links">
@@ -1269,38 +1460,97 @@
     <i class="fab fa-whatsapp"></i>
   </a>
   
-  <!-- Botón flotante del Asistente de IA - SOLO AUDIO -->
-  <div class="ai-assistant pulse" id="aiAssistant" title="Haz clic para escuchar la bienvenida">
-    <i class="fas fa-robot"></i>
-  </div>
-  
   <script>
-    // FUNCIÓN DE SANITIZACIÓN AGREGADA PARA PROTEGER CONTRA XSS
-    function sanitizeInput(input) {
-      if (typeof input !== 'string') return input;
-      return input
+    // SPLASH SCREEN - Control principal
+    document.addEventListener('DOMContentLoaded', function() {
+      const splashScreen = document.getElementById('splashScreen');
+      const body = document.body;
       
-    }
-
-    // Función para cambiar imágenes (MODIFICADA PARA SEGURIDAD)
+      // Forzar que la página esté en la parte superior
+      window.scrollTo(0, 0);
+      
+      // Asegurar que no haya scroll durante el splash
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.width = '100%';
+      body.style.height = '100%';
+      
+      // Función para esconder el splash
+      function hideSplash() {
+        // Añadir clase de animación de salida
+        splashScreen.classList.add('fade-out');
+        
+        // Esperar a que termine la animación
+        setTimeout(() => {
+          // Ocultar completamente el splash
+          splashScreen.style.display = 'none';
+          
+          // Restaurar el scroll y posición del body
+          body.style.overflow = 'auto';
+          body.style.position = 'static';
+          body.style.width = 'auto';
+          body.style.height = 'auto';
+          
+          // Añadir clase loaded al body
+          body.classList.add('loaded');
+          
+          // Forzar que la página empiece desde arriba
+          window.scrollTo(0, 0);
+          
+          // Mostrar contenido principal con animación
+          const mainContent = document.querySelector('.main-content');
+          mainContent.style.display = 'block';
+          
+          // Pequeño delay para asegurar que el DOM esté listo
+          setTimeout(() => {
+            mainContent.style.opacity = '1';
+            mainContent.style.transform = 'translateY(0)';
+            
+            // Asegurar que el hero se vea correctamente
+            window.scrollTo(0, 0);
+          }, 50);
+        }, 800); // Tiempo de la animación de fade-out
+      }
+      
+      // Configurar animación de palabras
+      function setupWordsAnimation() {
+        const words = document.querySelectorAll('.word');
+        words.forEach((word, index) => {
+          word.style.animationDelay = `${0.5 + (index * 0.5)}s`;
+        });
+      }
+      
+      // Inicializar
+      setupWordsAnimation();
+      
+      // Precargar el logo para máxima nitidez
+      const logoImg = new Image();
+      logoImg.src = 'img/7.png';
+      logoImg.onload = function() {
+        console.log('Logo cargado en alta calidad');
+      };
+      
+      // Tiempo total: 3 segundos (0.5s + 1.5s + 1s margen)
+      setTimeout(hideSplash, 3000);
+      
+      // Permitir salir con click
+      splashScreen.addEventListener('click', hideSplash);
+    });
+    
+    // Función para cambiar imágenes
     function changeImage(imageSrc, element) {
-      // Validar que la imagen sea de una fuente segura
-      const safeImageSrc = imageSrc.startsWith('img/') ? imageSrc : 'img/1.jpg';
-      
       const mainImage = document.getElementById('mainImage');
       mainImage.style.opacity = 0;
       
       setTimeout(() => {
-        mainImage.src = safeImageSrc;
+        mainImage.src = imageSrc;
         mainImage.style.opacity = 1;
       }, 200);
       
-      // Remover la clase 'selected' de todas las miniaturas
       document.querySelectorAll('.thumbnail').forEach(thumb => {
         thumb.classList.remove('selected');
       });
       
-      // Añadir la clase 'selected' to the clicked thumbnail
       element.classList.add('selected');
     }
     
@@ -1318,22 +1568,21 @@
       const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
       const navLinks = document.querySelector('.nav-links');
       
-      if (mobileMenuBtn) {
+      if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', function() {
           navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
           this.innerHTML = navLinks.style.display === 'flex' ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
+        
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 768) {
+            navLinks.style.display = 'flex';
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          } else {
+            navLinks.style.display = 'none';
+          }
+        });
       }
-      
-      // Ajustar menú en resize
-      window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-          if (navLinks) navLinks.style.display = 'flex';
-          if (mobileMenuBtn) mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        } else {
-          if (navLinks) navLinks.style.display = 'none';
-        }
-      });
       
       // Smooth scroll para enlaces
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1341,7 +1590,8 @@
           e.preventDefault();
           const target = document.querySelector(this.getAttribute('href'));
           if (target) {
-            target.scrollIntoView({
+            window.scrollTo({
+              top: target.offsetTop - 80,
               behavior: 'smooth'
             });
           }
@@ -1349,20 +1599,14 @@
       });
     });
 
-    // Funciones para el modal (MODIFICADAS PARA SEGURIDAD)
+    // Funciones para el modal
     function showModal(title, imageSrc, price, description) {
-      // Sanitizar todas las entradas
-      const safeTitle = sanitizeInput(title);
-      const safeImageSrc = imageSrc.startsWith('img/') ? imageSrc : 'img/1.jpg';
-      const safePrice = sanitizeInput(price);
-      const safeDescription = sanitizeInput(description);
-      
       const modal = document.getElementById('productModal');
-      document.getElementById('modalTitle').textContent = safeTitle;
-      document.getElementById('modalImage').src = safeImageSrc;
-      document.getElementById('modalImage').alt = safeTitle;
-      document.getElementById('modalPrice').textContent = safePrice;
-      document.getElementById('modalDescription').textContent = safeDescription;
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalImage').src = imageSrc;
+      document.getElementById('modalImage').alt = title;
+      document.getElementById('modalPrice').textContent = price;
+      document.getElementById('modalDescription').textContent = description;
       
       modal.style.display = 'block';
       setTimeout(() => {
@@ -1389,11 +1633,6 @@
       }
     }
 
-    // PROTECCIÓN CONTRA CLICKJACKING
-    if (self !== top) {
-      top.location = self.location;
-    }
-
     // Carrusel del hero
     document.addEventListener('DOMContentLoaded', function() {
       const slides = document.querySelectorAll('.slide');
@@ -1410,48 +1649,11 @@
         setInterval(nextSlide, 5000);
       }
     });
-    
-    // Funciones para el Asistente de IA (SOLO AUDIO)
-    document.addEventListener('DOMContentLoaded', function() {
-      // Elemento del asistente
-      const aiAssistant = document.getElementById('aiAssistant');
-      
-      // Mensaje de bienvenida
-      const welcomeMessage = "¡Bienvenido a nuestro sitio web de Ocre Bayer! Somos distribuidores oficiales de pigmentos naturales de alta calidad en Bolivia. Ofrecemos ocre bayer , tierras naturales y tizanol para construcción, arte y restauración. Deslice hacia abajo para descubrir nuestros productos destacados, novedades y promociones espero sea de su agrado, gracias.";
-      
-      // Función para hablar mensaje
-      function speakMessage(message) {
-        // Detener cualquier mensaje anterior
-        if (window.speechSynthesis) {
-          window.speechSynthesis.cancel();
-          
-          // Crear el mensaje de voz
-          const utterance = new SpeechSynthesisUtterance(message);
-          utterance.lang = 'es-ES';
-          utterance.rate = 0.9;
-          utterance.pitch = 1;
-          utterance.volume = 1;
-          
-          // Reproducir el mensaje
-          window.speechSynthesis.speak(utterance);
-        }
-      }
-      
-      // Reproducir mensaje de bienvenida automáticamente al cargar la página
-      setTimeout(() => {
-        if (window.speechSynthesis) {
-          speakMessage(welcomeMessage);
-        }
-      }, 2000); // 2 segundos después de cargar la página
-      
-      // Reproducir mensaje al hacer clic en el botón
-      aiAssistant.addEventListener('click', function() {
-        speakMessage(welcomeMessage);
-      });
-    });
   </script>
+
 </body>
 </html>
+
 
 
 
