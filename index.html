@@ -28,7 +28,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: #F5F5DC; /* Color de fondo igual que tu página */
+      background-color: #F5F5DC;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -40,27 +40,25 @@
       position: absolute;
       width: 70%;
       height: 70%;
-      opacity: 1; /* Logo completamente visible y nítido */
-      background-image: url('img/7.png'); /* Tu logo */
+      opacity: 1;
+      background-image: url('img/7.png');
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      filter: none; /* Sin filtros para máxima nitidez */
-      image-rendering: -webkit-optimize-contrast; /* Mejor calidad en Chrome/Safari */
-      image-rendering: crisp-edges; /* Mejor calidad en Firefox */
-      image-rendering: pixelated; /* Mejor calidad para imágenes pixeladas */
-      -ms-interpolation-mode: nearest-neighbor; /* Mejor calidad en IE */
+      filter: none;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      image-rendering: pixelated;
+      -ms-interpolation-mode: nearest-neighbor;
     }
     
-    /* Contenido centrado sobre el logo - TEXTO MÁS ARRIBA */
     .splash-content {
       text-align: center;
       z-index: 2;
       position: relative;
-      margin-top: -350px; /* Mueve todo el contenido más arriba */
+      margin-top: -350px;
     }
     
-    /* Texto principal con palabras que aparecen - MÁS ARRIBA */
     .splash-text {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
@@ -68,7 +66,7 @@
       font-weight: 700;
       text-align: center;
       line-height: 1.3;
-      margin-bottom: 10px; /* Reducido para subir más */
+      margin-bottom: 10px;
       text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
     }
     
@@ -85,19 +83,17 @@
     .word:nth-child(3) { animation-delay: 1.5s; }
     .word:nth-child(4) { animation-delay: 2.0s; }
     
-    /* Subtítulo - MÁS ARRIBA */
     .splash-subtitle {
       font-size: 1.2rem;
       color: #666666;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-top: 10px; /* Reducido para subir más */
+      margin-top: 10px;
       opacity: 0;
       animation: fadeIn 1s 2.5s forwards;
       text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
     }
     
-    /* Logo más pequeño para dar espacio al texto */
     .splash-logo {
       width: 80px;
       height: auto;
@@ -107,7 +103,6 @@
       filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     }
     
-    /* Animaciones */
     @keyframes wordAppear {
       0% {
         opacity: 0;
@@ -125,14 +120,12 @@
       }
     }
     
-    /* Salida elegante */
     .splash-screen.fade-out {
       opacity: 0;
       transform: scale(1.1);
       transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
     
-    /* Evitar scroll y ocultar contenido principal */
     body {
       overflow: hidden;
       height: 100%;
@@ -157,20 +150,19 @@
       transform: translateY(0);
     }
     
-    /* Asegurar que la página empiece desde arriba */
     html, body {
       scroll-behavior: auto;
     }
     
     :root {
-      --primary: #8B4513;     /* Color tierra oscuro */
-      --secondary: #A0522D;   /* Siena */
-      --accent: #CD853F;      /* Peru */
-      --light: #F5F5DC;       /* Beige claro */
-      --dark: #333333;        /* Texto oscuro */
-      --highlight: #D2B48C;   /* Tan */
-      --whatsapp: #25D366;    /* Verde WhatsApp */
-      --text-light: #666666;  /* Texto gris */
+      --primary: #8B4513;
+      --secondary: #A0522D;
+      --accent: #CD853F;
+      --light: #F5F5DC;
+      --dark: #333333;
+      --highlight: #D2B48C;
+      --whatsapp: #25D366;
+      --text-light: #666666;
       --border-radius: 8px;
       --box-shadow: 0 5px 15px rgba(0,0,0,0.08);
       --transition: all 0.3s ease;
@@ -198,7 +190,7 @@
       color: var(--primary);
     }
     
-    /* Barra de navegación profesional */
+    /* Barra de navegación */
     .navbar {
       background-color: white;
       box-shadow: 0 2px 20px rgba(0,0,0,0.08);
@@ -232,7 +224,7 @@
     .logo img {
       height: 48px;
       margin-right: 12px;
-      image-rendering: -webkit-optimize-contrast; /* Logo nítido en nav también */
+      image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
     }
     
@@ -284,16 +276,51 @@
       color: var(--primary);
     }
     
-    /* Hero section profesional */
+    /* Hero section */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/hero-bg.jpg');
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+    
+    .hero-slider {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
-      color: white;
-      padding: 120px 20px;
-      text-align: center;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    
+    .slide.active {
+      opacity: 1;
+    }
+    
+    .hero-content {
       position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 30px;
+      background-color: rgba(43, 41, 39, 0.85);
+      border-radius: 10px;
+      margin: 0 20px;
     }
     
     .hero h1 {
@@ -340,11 +367,11 @@
     
     /* Sección con fondo de imagen */
     .product-section {
-      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../Ocre/img/12.jpeg');
+      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('img/12.jpeg');
       background-size: cover;
-      background-attachment: fixed;
+      background-attachment: scroll;
       background-position: center;
-      padding: 40px;
+      padding: 30px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       margin-bottom: 40px;
@@ -354,8 +381,8 @@
     .product-header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
-      padding: 40px;
-      margin-bottom: 40px;
+      padding: 30px 20px;
+      margin-bottom: 30px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       text-align: center;
@@ -376,7 +403,7 @@
     }
     
     .product-title {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 10px;
       position: relative;
       z-index: 1;
@@ -389,20 +416,20 @@
       z-index: 1;
     }
     
-    /* Galería de imágenes profesional */
+    /* Galería de imágenes */
     .gallery-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     
     .main-image-container {
       width: 100%;
       max-width: 650px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       background: white;
-      padding: 20px;
+      padding: 15px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       display: flex;
@@ -423,13 +450,13 @@
       border-radius: var(--border-radius);
       border: 1px solid rgba(0,0,0,0.05);
       transition: transform 0.5s ease;
-      image-rendering: -webkit-optimize-contrast; /* Imágenes nítidas */
+      image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
     }
     
     .thumbnail-container {
       display: flex;
-      gap: 15px;
+      gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
       width: 100%;
@@ -437,10 +464,10 @@
     }
     
     .thumbnail {
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
       background: white;
-      padding: 5px;
+      padding: 4px;
       border-radius: var(--border-radius);
       box-shadow: 0 3px 10px rgba(0,0,0,0.08);
       cursor: pointer;
@@ -462,7 +489,7 @@
       height: 100%;
       object-fit: cover;
       border-radius: calc(var(--border-radius) - 2px);
-      image-rendering: -webkit-optimize-contrast; /* Miniaturas nítidas */
+      image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
     }
     
@@ -485,10 +512,10 @@
     
     .product-description {
       background: white;
-      padding: 30px;
+      padding: 25px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       position: relative;
     }
     
@@ -505,7 +532,7 @@
     
     .product-description h2 {
       font-size: 1.8rem;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       color: var(--primary);
       border-bottom: 2px solid var(--highlight);
       padding-bottom: 10px;
@@ -513,22 +540,24 @@
     }
     
     .product-description p {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       color: var(--text-light);
       line-height: 1.7;
+      font-size: 1rem;
     }
     
     .features-list {
       list-style-type: none;
-      margin: 25px 0;
+      margin: 20px 0;
     }
     
     .features-list li {
-      padding: 10px 0;
+      padding: 8px 0;
       position: relative;
-      padding-left: 30px;
+      padding-left: 25px;
       color: var(--text-light);
       border-bottom: 1px dashed rgba(0,0,0,0.05);
+      font-size: 0.95rem;
     }
     
     .features-list li:before {
@@ -537,7 +566,7 @@
       font-weight: bold;
       position: absolute;
       left: 0;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
     
     /* Barra lateral con precio y CTA */
@@ -547,10 +576,10 @@
     
     .price-box {
       background: white;
-      padding: 30px;
+      padding: 25px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       text-align: center;
       border: 2px solid var(--highlight);
       position: relative;
@@ -571,10 +600,10 @@
     }
     
     .price {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       color: var(--primary);
       font-weight: bold;
-      margin: 20px 0;
+      margin: 15px 0;
       position: relative;
       display: inline-block;
     }
@@ -599,13 +628,13 @@
       background: var(--whatsapp);
       color: white;
       border: none;
-      padding: 15px 30px;
+      padding: 14px 25px;
       border-radius: 50px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       width: 100%;
-      margin: 20px 0;
+      margin: 15px 0;
       transition: var(--transition);
       display: flex;
       align-items: center;
@@ -625,7 +654,7 @@
     .stock {
       color: var(--primary);
       font-weight: 500;
-      margin: 15px 0;
+      margin: 12px 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -634,7 +663,7 @@
     
     .product-meta {
       background: white;
-      padding: 25px;
+      padding: 20px;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
     }
@@ -642,8 +671,9 @@
     .meta-item {
       display: flex;
       justify-content: space-between;
-      padding: 12px 0;
+      padding: 10px 0;
       border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-size: 0.95rem;
     }
     
     .meta-item:last-child {
@@ -657,13 +687,13 @@
     
     /* Productos relacionados */
     .related-products {
-      margin: 60px 0;
+      margin: 50px 0;
     }
     
     .related-products h2 {
       text-align: center;
-      margin-bottom: 40px;
-      font-size: 2rem;
+      margin-bottom: 35px;
+      font-size: 1.8rem;
       position: relative;
       display: inline-block;
       left: 50%;
@@ -682,8 +712,8 @@
     
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
     }
     
     .product-card {
@@ -696,12 +726,12 @@
     }
     
     .product-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       box-shadow: 0 15px 30px rgba(0,0,0,0.12);
     }
     
     .product-card-img {
-      height: 220px;
+      height: 200px;
       overflow: hidden;
     }
     
@@ -710,7 +740,7 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
-      image-rendering: -webkit-optimize-contrast; /* Imágenes de productos nítidas */
+      image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
     }
     
@@ -719,11 +749,11 @@
     }
     
     .product-card-info {
-      padding: 20px;
+      padding: 18px;
     }
     
     .product-card-info h3 {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       margin-bottom: 10px;
       color: var(--dark);
     }
@@ -739,7 +769,7 @@
       display: inline-block;
       background: var(--accent);
       color: white;
-      padding: 8px 20px;
+      padding: 8px 18px;
       border-radius: var(--border-radius);
       text-decoration: none;
       font-weight: 500;
@@ -755,8 +785,8 @@
     .footer {
       background: #000000;
       color: white;
-      padding: 70px 0 30px;
-      margin-top: 60px;
+      padding: 50px 0 25px;
+      margin-top: 50px;
     }
     
     .footer-container {
@@ -765,41 +795,42 @@
       padding: 0 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
+      gap: 35px;
     }
     
     .footer-about {
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
     
     .footer-logo {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     
     .footer-logo img {
-      height: 50px;
-      filter: brightness(0) invert(1); /* Hace el logo blanco */
-      image-rendering: -webkit-optimize-contrast; /* Logo nítido en footer */
+      height: 45px;
+      filter: brightness(0) invert(1);
+      image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
     }
     
     .footer-about p {
       opacity: 0.8;
       line-height: 1.7;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
     }
     
     .social-links {
       display: flex;
-      gap: 15px;
+      gap: 12px;
     }
     
     .social-links a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       background: rgba(255,255,255,0.1);
       border-radius: 50%;
       color: white;
@@ -812,8 +843,8 @@
     }
     
     .footer-contact h3 {
-      font-size: 1.3rem;
-      margin-bottom: 25px;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
       position: relative;
       padding-bottom: 10px;
     }
@@ -831,18 +862,25 @@
     .footer-contact p {
       display: flex;
       align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       opacity: 0.8;
       gap: 10px;
+      font-size: 0.95rem;
     }
     
     .footer-bottom {
       text-align: center;
-      padding-top: 30px;
-      margin-top: 30px;
+      padding-top: 25px;
+      margin-top: 25px;
       border-top: 1px solid rgba(255,255,255,0.1);
       opacity: 0.7;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      padding: 0 20px;
+    }
+    
+    .footer-bottom a {
+      color: var(--accent);
+      text-decoration: none;
     }
     
     /* Botón flotante de WhatsApp */
@@ -850,8 +888,8 @@
       position: fixed;
       width: 60px;
       height: 60px;
-      bottom: 40px;
-      right: 40px;
+      bottom: 30px;
+      right: 30px;
       background-color: var(--whatsapp);
       color: white;
       border-radius: 50px;
@@ -893,7 +931,7 @@
     .modal-content {
       background-color: white;
       margin: 5% auto;
-      padding: 30px;
+      padding: 25px;
       border-radius: var(--border-radius);
       box-shadow: 0 5px 30px rgba(0,0,0,0.3);
       width: 80%;
@@ -923,7 +961,7 @@
     
     .modal-body {
       display: flex;
-      gap: 30px;
+      gap: 25px;
       margin-top: 20px;
     }
     
@@ -935,7 +973,7 @@
       width: 100%;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      image-rendering: -webkit-optimize-contrast; /* Modal imágenes nítidas */
+      image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
     }
     
@@ -946,22 +984,35 @@
     .modal-text h3 {
       color: var(--primary);
       margin-bottom: 15px;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
     
     .modal-text p {
       color: var(--text-light);
       margin-bottom: 15px;
+      font-size: 0.95rem;
     }
     
     .modal-price {
       font-size: 1.3rem;
       color: var(--primary);
       font-weight: 700;
-      margin: 20px 0;
+      margin: 18px 0;
     }
     
-    /* Responsive */
+    /* Botón de menú móvil */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--dark);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 5px;
+      z-index: 1001;
+    }
+    
+    /* ==================== MEDIA QUERIES PARA TABLET ==================== */
     @media (max-width: 992px) {
       .hero h1 {
         font-size: 2.2rem;
@@ -969,6 +1020,18 @@
       
       .hero p {
         font-size: 1rem;
+      }
+      
+      .product-title {
+        font-size: 2rem;
+      }
+      
+      .product-info {
+        gap: 30px;
+      }
+      
+      .main-image-container {
+        height: 380px;
       }
       
       .splash-text {
@@ -985,55 +1048,227 @@
       }
     }
     
+    /* ==================== MEDIA QUERIES PARA CELULAR ==================== */
     @media (max-width: 768px) {
+      /* Barra de navegación móvil */
+      .nav-container {
+        padding: 0 15px;
+      }
+      
       .nav-links {
-        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        display: none !important;
+        gap: 0;
+        z-index: 999;
+      }
+      
+      .nav-links.active {
+        display: flex !important;
+      }
+      
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .nav-links a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        width: 100%;
       }
       
       .mobile-menu-btn {
-        display: block;
-        background: none;
-        border: none;
-        color: var(--dark);
-        font-size: 1.5rem;
-        cursor: pointer;
+        display: block !important;
       }
       
+      .logo img {
+        height: 40px;
+      }
+      
+      /* Hero section móvil */
+      .hero {
+        height: 60vh;
+        min-height: 400px;
+      }
+      
+      .hero-content {
+        padding: 25px 20px;
+        margin: 0 15px;
+        background-color: rgba(43, 41, 39, 0.9);
+      }
+      
+      .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+      
+      .cta-button {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+      }
+      
+      /* Contenedor principal móvil */
+      .container {
+        margin: 25px auto;
+        padding: 0 15px;
+      }
+      
+      .product-section {
+        padding: 20px 15px;
+        margin-bottom: 30px;
+      }
+      
+      .product-header {
+        padding: 25px 15px;
+        margin-bottom: 25px;
+      }
+      
+      .product-title {
+        font-size: 1.7rem;
+      }
+      
+      /* Galería móvil */
+      .gallery-container {
+        margin-bottom: 30px;
+      }
+      
+      .main-image-container {
+        height: 300px;
+        padding: 12px;
+        margin-bottom: 15px;
+      }
+      
+      .thumbnail-container {
+        gap: 10px;
+      }
+      
+      .thumbnail {
+        width: 60px;
+        height: 60px;
+      }
+      
+      /* Información del producto móvil */
       .product-info {
         flex-direction: column;
+        margin-bottom: 40px;
+        gap: 30px;
       }
       
       .product-details, .product-sidebar {
         flex: 0 0 100%;
+        width: 100%;
       }
       
-      .main-image-container {
-        height: 350px;
+      .product-description {
+        padding: 20px;
+        margin-bottom: 20px;
       }
       
-      .thumbnail {
-        width: 70px;
-        height: 70px;
+      .product-description h2 {
+        font-size: 1.5rem;
+      }
+      
+      .product-description p {
+        font-size: 0.95rem;
+      }
+      
+      .features-list li {
+        font-size: 0.9rem;
+        padding-left: 22px;
+      }
+      
+      /* Sidebar móvil */
+      .price-box {
+        padding: 20px;
+      }
+      
+      .price {
+        font-size: 1.8rem;
+      }
+      
+      .whatsapp-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+      }
+      
+      /* Productos relacionados móvil */
+      .related-products {
+        margin: 40px 0;
+      }
+      
+      .related-products h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+      }
+      
+      .product-card-img {
+        height: 150px;
+      }
+      
+      .product-card-info {
+        padding: 15px;
+      }
+      
+      .product-card-info h3 {
+        font-size: 1.1rem;
+      }
+      
+      /* Footer móvil */
+      .footer {
+        padding: 40px 0 20px;
+        margin-top: 40px;
       }
       
       .footer-container {
         grid-template-columns: 1fr;
+        gap: 30px;
       }
       
-      .modal-body {
-        flex-direction: column;
+      .footer-contact p {
+        font-size: 0.9rem;
       }
       
+      /* Modal móvil */
       .modal-content {
         width: 90%;
         margin: 10% auto;
         padding: 20px;
       }
       
-      .product-section {
-        padding: 20px;
+      .modal-body {
+        flex-direction: column;
+        gap: 20px;
       }
       
+      /* WhatsApp float móvil */
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 25px;
+        right: 25px;
+        font-size: 26px;
+      }
+      
+      /* Splash screen móvil */
       .splash-text {
         font-size: 2rem;
       }
@@ -1047,38 +1282,69 @@
         margin-top: -60px;
       }
       
+      .splash-subtitle {
+        font-size: 1rem;
+        letter-spacing: 2px;
+      }
+      
       .splash-logo {
         width: 60px;
+        margin-bottom: 15px;
+      }
+      
+      .word {
+        margin-right: 8px;
       }
     }
     
-    @media (max-width: 576px) {
+    /* ==================== MEDIA QUERIES PARA CELULAR PEQUEÑO ==================== */
+    @media (max-width: 480px) {
       .hero {
-        padding: 80px 20px;
+        height: 55vh;
+        min-height: 350px;
+      }
+      
+      .hero-content {
+        padding: 20px 15px;
       }
       
       .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+      }
+      
+      .hero p {
+        font-size: 0.9rem;
       }
       
       .product-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
       
       .main-image-container {
-        height: 280px;
+        height: 250px;
+      }
+      
+      .thumbnail {
+        width: 55px;
+        height: 55px;
+      }
+      
+      .products-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+      
+      .product-card-img {
+        height: 180px;
       }
       
       .price {
-        font-size: 2rem;
-      }
-      
-      .product-section {
-        padding: 15px;
+        font-size: 1.7rem;
       }
       
       .splash-text {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
       
       .splash-bg-logo {
@@ -1091,19 +1357,72 @@
       }
       
       .word {
-        margin-right: 8px;
+        margin-right: 5px;
         display: block;
         margin-bottom: 5px;
       }
       
       .splash-subtitle {
-        font-size: 1rem;
-        letter-spacing: 2px;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
       }
       
       .splash-logo {
         width: 50px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+      }
+      
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+      }
+      
+      .footer-bottom {
+        font-size: 0.8rem;
+        line-height: 1.5;
+      }
+    }
+    
+    /* ==================== MEDIA QUERIES PARA CELULAR MUY PEQUEÑO ==================== */
+    @media (max-width: 360px) {
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+      
+      .product-title {
+        font-size: 1.3rem;
+      }
+      
+      .main-image-container {
+        height: 220px;
+      }
+      
+      .thumbnail-container {
+        justify-content: space-between;
+      }
+      
+      .thumbnail {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .price {
+        font-size: 1.5rem;
+      }
+      
+      .splash-text {
+        font-size: 1.4rem;
+      }
+      
+      .logo-text {
+        font-size: 1rem;
+      }
+      
+      .logo img {
+        height: 35px;
       }
     }
   </style>
@@ -1165,85 +1484,6 @@
         <a href="#productos" class="cta-button">Explorar Catálogo</a>
       </div>
     </section>
-    
-    <style>
-      .hero {
-        position: relative;
-        height: 80vh;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        text-align: center;
-      }
-    
-      .hero-slider {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 0;
-      }
-    
-      .slide {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        image-rendering: -webkit-optimize-contrast; /* Hero image nítida */
-        image-rendering: crisp-edges;
-        opacity: 0;
-        transition: opacity 1s ease;
-      }
-    
-      .slide.active {
-        opacity: 1;
-      }
-    
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        max-width: 800px;
-        padding: 20px;
-        background-color: rgba(43, 41, 39, 0.911);
-        border-radius: 10px;
-      }
-    
-      .cta-button {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 25px;
-        background-color: #eaa51b;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-      }
-    
-      @media (max-width: 768px) {
-        .hero {
-          height: 50vh;
-        }
-    
-        .hero-content {
-          padding: 15px;
-          max-width: 95%;
-          font-size: 0.9rem;
-        }
-    
-        .cta-button {
-          font-size: 0.8rem;
-          padding: 8px 20px;
-        }
-    
-        .slide {
-          background-size: cover;
-        }
-      }
-    </style>
     
     <!-- Contenido principal con fondo de imagen -->
     <div class="container">
@@ -1365,7 +1605,7 @@
             <div class="product-card-info">
               <h3>Ocre rojo Natural</h3>
               <div class="product-card-price">Bs/ 22.90/kg</div>
-              <a href="#" class="product-card-btn" onclick="showModal('Tierra Roja Natural', 'Ocre/img/8.png', 'Bs/ 22.90 por kilogramo', 'Pigmento mineral natural de color rojo intenso, ideal para morteros pigmentados y pinturas artesanales. Extraído de yacimientos naturales con alto contenido de óxidos de hierro.')">Ver Detalles</a>
+              <a href="#" class="product-card-btn" onclick="showModal('Tierra Roja Natural', 'img/8.png', 'Bs/ 22.90 por kilogramo', 'Pigmento mineral natural de color rojo intenso, ideal para morteros pigmentados y pinturas artesanales. Extraído de yacimientos naturales con alto contenido de óxidos de hierro.')">Ver Detalles</a>
             </div>
           </div>
           
@@ -1386,7 +1626,7 @@
             <div class="product-card-info">
               <h3>Paquetes de Ocre Bayer</h3>
               <div class="product-card-price">Bs/ 28.50/kg</div>
-              <a href="#" class="product-card-btn" onclick="showModal('Tizanol', 'img/123.png', 'Bs/ 28.50 por kilogramo', 'Pigmento de tizanol , perfecto para acabados arquitectónicos y concretos decorativos. Gran resistencia a la intemperie y luz solar.')">Ver Detalles</a>
+              <a href="#" class="product-card-btn" onclick="showModal('Paquetes de Ocre Bayer', 'img/123.png', 'Bs/ 28.50 por kilogramo', 'Pigmento de tizanol , perfecto para acabados arquitectónicos y concretos decorativos. Gran resistencia a la intemperie y luz solar.')">Ver Detalles</a>
             </div>
           </div>
           
@@ -1451,7 +1691,7 @@
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; 2023 Pigmentos Naturales Bolivia. Todos los derechos reservados. | Diseñado por <a href="#" style="color: var(--accent);">Gonzalo Churqui Q Cel:71261231 info </a></p>
+      <p>&copy; 2023 Pigmentos Naturales Bolivia. Todos los derechos reservados. | Diseñado por <a href="#">Gonzalo Churqui Q Cel:71261231 info </a></p>
     </div>
   </footer>
   
@@ -1509,7 +1749,7 @@
             // Asegurar que el hero se vea correctamente
             window.scrollTo(0, 0);
           }, 50);
-        }, 800); // Tiempo de la animación de fade-out
+        }, 800);
       }
       
       // Configurar animación de palabras
@@ -1530,11 +1770,17 @@
         console.log('Logo cargado en alta calidad');
       };
       
-      // Tiempo total: 3 segundos (0.5s + 1.5s + 1s margen)
+      // Tiempo total: 3 segundos
       setTimeout(hideSplash, 3000);
       
       // Permitir salir con click
       splashScreen.addEventListener('click', hideSplash);
+      
+      // Inicializar menú móvil
+      initMobileMenu();
+      
+      // Inicializar carrusel hero
+      initHeroSlider();
     });
     
     // Función para cambiar imágenes
@@ -1563,28 +1809,38 @@
       this.style.transform = 'scale(1)';
     });
     
-    // Mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
+    // Menú móvil
+    function initMobileMenu() {
       const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
       const navLinks = document.querySelector('.nav-links');
       
       if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', function() {
-          navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-          this.innerHTML = navLinks.style.display === 'flex' ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+          navLinks.classList.toggle('active');
+          this.innerHTML = navLinks.classList.contains('active') ? 
+            '<i class="fas fa-times"></i>' : 
+            '<i class="fas fa-bars"></i>';
+        });
+        
+        // Cerrar menú al hacer click en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          });
         });
         
         window.addEventListener('resize', function() {
           if (window.innerWidth > 768) {
-            navLinks.style.display = 'flex';
+            navLinks.classList.remove('active');
             mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-          } else {
-            navLinks.style.display = 'none';
           }
         });
       }
-      
-      // Smooth scroll para enlaces
+    }
+    
+    // Smooth scroll para enlaces
+    document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
@@ -1634,7 +1890,7 @@
     }
 
     // Carrusel del hero
-    document.addEventListener('DOMContentLoaded', function() {
+    function initHeroSlider() {
       const slides = document.querySelectorAll('.slide');
       if (slides.length > 0) {
         let currentSlide = 0;
@@ -1648,7 +1904,7 @@
         // Cambia cada 5 segundos
         setInterval(nextSlide, 5000);
       }
-    });
+    }
   </script>
 
 </body>
