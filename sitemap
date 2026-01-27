@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- URL principal -->
+  <url>
+    <loc>https://ocre5-0.vercel.app/</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ocre5-0.vercel.app/img/7.png</image:loc>
+      <image:title>Logo Ocre Bayer Importado - Pigmentos Naturales Bolivia</image:title>
+      <image:caption>Distribuidores oficiales de pigmentos naturales de alta calidad</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Página de contacto -->
+  <url>
+    <loc>https://ocre5-0.vercel.app/Contacto.html</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Producto: Ocre Natural -->
+  <url>
+    <loc>https://ocre5-0.vercel.app/#productos</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ocre5-0.vercel.app/img/1.jpg</image:loc>
+      <image:title>Ocre Natural Premium - Pigmento Mineral Bolivia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ocre5-0.vercel.app/img/2.jpg</image:loc>
+      <image:title>Ocre Natural - Detalle del producto</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ocre5-0.vercel.app/img/3.jpg</image:loc>
+      <image:title>Ocre Natural - Aplicaciones</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ocre5-0.vercel.app/img/4.jpg</image:loc>
+      <image:title>Ocre Natural - Presentación</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Imágenes importantes para SEO -->
+  <url>
+    <loc>https://ocre5-0.vercel.app/img/8.png</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ocre5-0.vercel.app/img/8.png</image:loc>
+      <image:title>Ocre Rojo Natural - Pigmento mineral Bolivia</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://ocre5-0.vercel.app/img/9.png</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ocre5-0.vercel.app/img/9.png</image:loc>
+      <image:title>Tizanol - Pigmento mineral Bolivia</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://ocre5-0.vercel.app/img/10.png</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ocre5-0.vercel.app/img/10.png</image:loc>
+      <image:title>Paquetes de Bayer - Productos completos</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://ocre5-0.vercel.app/img/13.png</loc>
+    <lastmod>2026-01-27</lastmod>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://ocre5-0.vercel.app/img/13.png</image:loc>
+      <image:title>Pigmentos Minerales Bolivia - Calidad Premium</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Página de política de privacidad (recomendado) -->
+  <url>
+    <loc>https://ocre5-0.vercel.app/privacy.html</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Página de términos y condiciones (recomendado) -->
+  <url>
+    <loc>https://ocre5-0.vercel.app/terms.html</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+</urlset>
